@@ -1,6 +1,6 @@
 {
-  "name": "t3-biome-bun-starter-kit",
-  "description": "T3 Biome Bun Starter Kit with Next.js, TailwindCSS, Drizzle ORM (postgres), tRPC, Shadcn-UI and NextAuth",
+  "name": "the_nexus_project",
+  "description": "We support free and open source software and hardware <3",
   "version": "0.1.0",
   "private": true,
   "type": "module",
