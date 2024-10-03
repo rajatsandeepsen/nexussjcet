@@ -25,7 +25,7 @@ const Hero = () => {
               alt="White Circle"
             />
           </div>
-          <p className="hidden md:absolute text-white font-bold text-3xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
+          <p className="hidden md:block  absolute text-white font-bold text-3xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
             <span className="text-black">
               Spread<span className="text-white">ing the foss</span>
             </span>
