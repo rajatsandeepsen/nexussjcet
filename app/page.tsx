@@ -21,6 +21,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-center relative">
         <div className="w-96">
           {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+          <img src="./logo.svg" className="repeat-infinite animate-pulse transition-all ease-out" />
         </div>
       </main>
     );
