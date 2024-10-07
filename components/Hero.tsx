@@ -16,14 +16,14 @@ const Hero = () => {
               className="w-[35rem] md:w-[35rem]"
               alt="Black Circle"
             />
-            <div className="top-1/2 left-1/4 overflow-hidden absolute w-screen  -translate-y-1/2">
+            {/* <div className="top-1/2 left-1/4 overflow-hidden absolute w-screen  -translate-y-1/2">
               <p className=" text-white font-bold text-xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
                 Spreading the foss
               </p>
               <p className=" text-white font-bold text-xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
                 message & having fun
               </p>
-            </div>
+            </div> */}
           </div>
 
           <div className="-ml-32 md:-ml-32 z-40 relative overflow-hidden">
@@ -32,16 +32,16 @@ const Hero = () => {
               className="w-[35rem] md:w-[35rem]"
               alt="White Circle"
             />
-            <div className="top-1/2 -left-1/4 overflow-hidden absolute w-screen -translate-y-1/2">
+            {/* <div className="top-1/2 -left-1/4 overflow-hidden absolute w-screen -translate-y-1/2">
               <p className=" text-black font-bold text-xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
                 Spreading the foss
               </p>
               <p className=" text-black font-bold text-xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
                 message & having fun
               </p>
-            </div>
+            </div> */}
           </div>
-          {/* <p className="hidden md:block  absolute text-white font-bold text-3xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
+          <p className="hidden md:block  absolute text-white font-bold text-3xl md:text-5xl text-left ml-4 md:ml-20 uppercase z-50">
             <span className="text-black">
               Spread<span className="text-white">ing the foss</span>
             </span>
@@ -61,7 +61,7 @@ const Hero = () => {
               style={{ WebkitTextStroke: "1px black" }}>
               message & having fun
             </span>
-          </p> */}
+          </p>
         </div>
       </div>
       <div className="relative w-full md:w-1/4 text-lg md:text-2xl font-bold text-gray-400 flex flex-col justify-center items-center h-full mt-4 md:mt-0">
