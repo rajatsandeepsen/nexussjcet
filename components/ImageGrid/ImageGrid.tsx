@@ -75,7 +75,7 @@ const ImageGridItem: React.FC<ImageGridItemProps> = ({ title, description, image
 
     return (
         <div
-            className={`relative m-2 h-screen w-full md:w-1/5 transition-all duration-300 ease-in-out transform ${
+            className={`relative m-2 h-screen w-full md:w-1/5 transition-all duration-300 ease-in-out transform pointer-events-none md:pointer-events-auto ${
                 isHovered ? "flex-grow" : "flex-shrink"
             } text-[#AAAAAA] font-bold text-2xl p-2`}
             onMouseEnter={() => setIsHovered(true)}
@@ -83,16 +83,16 @@ const ImageGridItem: React.FC<ImageGridItemProps> = ({ title, description, image
         >
         
             <div
-                className={`absolute h-full inset-0 flex flex-col justify-between items-start ${isHovered ? "bg-transparent" : "bg-[#e1e1e1]"} p-4 transition-opacity duration-300`}
+                className={`absolute h-full inset-0 flex flex-col justify-between items-start ${isHovered ? "bg-transparent" : "md:bg-[#e1e1e1]"} p-4 transition-opacity duration-300 bg-transparent border-t-2 border-b-2 md:border-none `}
             >
                 <div className={` text-center justify-between text-gray-400 h-full ${id % 2 === 0 ? "flex-col" : "flex-col-reverse"} ${isHovered ? "hidden" : "flex"}`}>
-                    <h3 className="text-3xl font-bold">{title}</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold">{title}</h3>
                     <div>
                     <div className="md:hidden flex flex-col items-start h-full w-full justify-between flex-1  mt-4 transition-all duration-300 ease-in-out transform">
                         <p className="text-2xl text-white mb-2 transition-all duration-300 ease-in-out transform">{description}</p>
-                        <div className="flex flex-col items-center space-y-2 mt-2">
+                        <div className="flex flex-col items-center gap-2 justify-center">
                             {images.map((img, index) => (
-                                <img key={index} src={img} alt={`additional-${index}`} className={`h-[30vh] w-[30vh] object-cover transition-all duration-300 ease-in-out transform ${index === 1 ? "md:mt-[-2rem] md:mr-[10rem]" : ""}`} />
+                                <img key={index} src={img} alt={`additional-${index}`} className={`h-[30vh] w-[100vw] object-cover transition-all duration-300 ease-in-out transform ${index === 1 ? "md:mt-[-2rem] md:mr-[10rem]" : ""}`} />
                             ))}
                         </div>
                     </div>
