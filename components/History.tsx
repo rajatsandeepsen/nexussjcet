@@ -4,7 +4,7 @@ import ImageGrid from "./ImageGrid/ImageGrid";
 
 const History = () => {
     return (
-        <div className="w-full min-h-screen flex justify-end items-center">
+        <div className="w-full h-auto flex justify-center items-center">
             {/* <Navbar/> */}
             <ImageGrid/>
             {/* <h1 className="text-4xl text-white">This sis History page</h1> */}

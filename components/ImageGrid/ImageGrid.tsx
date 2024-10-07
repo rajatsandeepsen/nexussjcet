@@ -61,7 +61,7 @@ interface ImageGridItemProps extends HistoryItem {
 // ImageGrid component
 const ImageGrid: React.FC = () => {
     return (
-        <div className="w-3/4 h-screen justify-end text-white flex flex-wrap py-4">
+        <div className="w-full h-auto justify-center md:justify-end text-white flex flex-wrap p-4">
             {history.map((item) => (
                 <ImageGridItem key={item.id} {...item} isHovered={false} />
             ))}
@@ -75,7 +75,7 @@ const ImageGridItem: React.FC<ImageGridItemProps> = ({ title, description, image
 
     return (
         <div
-            className={`relative m-2 h-full w-1/5 transition-all duration-300 transform ${
+            className={`relative m-2 h-screen w-full md:w-1/5 transition-all duration-300 ease-in-out transform ${
                 isHovered ? "flex-grow" : "flex-shrink"
             } text-[#AAAAAA] font-bold text-2xl p-2`}
             onMouseEnter={() => setIsHovered(true)}
@@ -87,17 +87,28 @@ const ImageGridItem: React.FC<ImageGridItemProps> = ({ title, description, image
             >
                 <div className={` text-center justify-between text-gray-400 h-full ${id % 2 === 0 ? "flex-col" : "flex-col-reverse"} ${isHovered ? "hidden" : "flex"}`}>
                     <h3 className="text-3xl font-bold">{title}</h3>
-                    <p className="text-7xl">{date.split(" ")[1]}</p>
-                </div>
-                {isHovered && (
-                    <div className="flex flex-col items-start h-full w-full justify-between flex-1  mt-4">
-                        <p className="text-2xl text-white mb-2">{description}</p>
+                    <div>
+                    <div className="md:hidden flex flex-col items-start h-full w-full justify-between flex-1  mt-4 transition-all duration-300 ease-in-out transform">
+                        <p className="text-2xl text-white mb-2 transition-all duration-300 ease-in-out transform">{description}</p>
                         <div className="flex flex-col items-center space-y-2 mt-2">
                             {images.map((img, index) => (
-                                <img key={index} src={img} alt={`additional-${index}`} className={`h-[30vh] w-[30vh] object-cover ${index === 1 ? "mt-[-2rem] mr-[10rem]" : ""}`} />
+                                <img key={index} src={img} alt={`additional-${index}`} className={`h-[30vh] w-[30vh] object-cover transition-all duration-300 ease-in-out transform ${index === 1 ? "md:mt-[-2rem] md:mr-[10rem]" : ""}`} />
                             ))}
                         </div>
-                        <p className="text-3xl mt-4">{date}</p>
+                    </div>
+                    </div>
+                    <p className="text-7xl">{date.split(" ")[1]}</p>
+
+                </div>
+                {isHovered && (
+                    <div className="hidden md:flex flex-col  h-full w-full items-center justify-between flex-1  mt-4 transition-all duration-300 ease-in-out transform">
+                        <p className="text-2xl text-white mb-2 transition-all duration-300 ease-in-out transform">{description}</p>
+                        <div className="flex flex-col items-center space-y-2 mt-2">
+                            {images.map((img, index) => (
+                                <img key={index} src={img} alt={`additional-${index}`} className={`h-[30vh] w-[30vh] object-cover transition-all duration-300 ease-in-out transform ${index === 1 ? "mt-[-2rem] mr-[10rem]" : ""}`} />
+                            ))}
+                        </div>
+                        <p className="text-3xl mt-4 text-gray-400">{date}</p>
                     </div>
                 )}
             </div>

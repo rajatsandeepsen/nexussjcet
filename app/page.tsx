@@ -37,7 +37,7 @@ export default function Home() {
         <Hero />
       <div className="h-auto">
 
-        <div className="">
+        <div className="h-auto flex items-center flex-col gap-10">
           <History />
           <EventsPage />
           {/* <TeamsPage /> */}
