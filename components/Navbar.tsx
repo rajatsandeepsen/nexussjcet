@@ -1,45 +1,138 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const Navbar = () => {
-  const [isActive, setIsActive] = useState<number | undefined>(); // Specify type for isActive
-  function handleSelect(index: number) {
-    setIsActive(index);
-  }
-  const items = [
-    { title: 'Home', description: '' },
-    { title: 'History', description: 'Our past achievements' },
-    { title: 'Events', description: 'Events we hosted' },
-    { title: 'Team', description: 'Meet our team members' },
+interface NavbarProps {
+  scrollToSection: (section: "home" | "history" | "events" | "teams") => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
+  const [rotation, setRotation] = useState(0);
+  const lastScrollPos = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const screenHeight = window.innerHeight;
+
+      const scrolledSections = Math.floor(scrollPosition / screenHeight);
+      const lastScrolledSections = Math.floor(
+        lastScrollPos.current / screenHeight
+      );
+
+      if (scrolledSections > lastScrolledSections) {
+        setRotation((prevRotation) => prevRotation + 45);
+      } else if (scrolledSections < lastScrolledSections) {
+        setRotation((prevRotation) => prevRotation - 45);
+      }
+
+      lastScrollPos.current = scrollPosition;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const labels = [
+    "Home",
+    "History",
+    "Events",
+    "Team",
+    "Home",
+    "Team",
+    "Events",
+    "History",
   ];
+  const descriptions = {
+    Home: "The homepage",
+    History: "How we started",
+    Events: "Events we have hosted",
+    Team: "Our members",
+  };
 
-  return (
-    <div className="w-1/4 h-screen relative text-white">
-      <div className="w-full relative flex justify-start items-center h-full">
-        {items.map((item, index) => {
-          const angle = (index / 3) * (Math.PI);
-          const x = Math.sin(angle) * 150;
-          const y = -Math.cos(angle) * 200;
+  const activeLabelIndex =
+    Math.floor(((rotation / 45) % labels.length) + labels.length) %
+    labels.length;
+  const activeLabel = labels[activeLabelIndex];
 
-          return (
-            <div key={item.title} className="relative flex flex-col">
-              <button 
-                className={`absolute flex items-center gap-3 transform transition-transform duration-300 ${isActive === index ? 'text-white' : 'text-gray-400'}`}
-                style={{ transform: `translate(${x}px, ${y}px)` }}
-                onClick={() => handleSelect(index)}
-              >
-                <div className="w-4 h-4 bg-gray-500 rounded-full"></div>
-                {item.title}
-              </button>
-              {isActive === index && (
-                <div className="absolute mt-8 text-red-500 w-full" style={{ transform: `translate(${x}px, ${y}px)`, whiteSpace: 'nowrap' }}>
-                  {item.description}
+  const renderLabels = () => {
+    return labels.map((label, index) => {
+      const angle = (360 / labels.length) * index;
+      const radius = 55;
+
+      const x = radius * Math.cos((angle * Math.PI) / 180);
+      const y = radius * Math.sin((angle * Math.PI) / 180);
+      const description = descriptions[label as keyof typeof descriptions];
+
+
+
+      const handleClick = () => {
+        // Call scrollToSection only for recognized sections
+        if (label === "Home") scrollToSection("home");
+        else if (label === "History") scrollToSection("history");
+        else if (label === "Events") scrollToSection("events");
+        else if (label === "Team") scrollToSection("teams");
+      };
+
+      return (
+        <div
+          key={index}
+          
+          onClick={handleClick}
+          style={{
+            position: "absolute",
+            top: `${50 + y}%`,
+            left: `${50 + x}%`,
+            transform: `translate(-50%, -50%) rotate(${-rotation}deg)`,
+            textAlign: "center",
+            fontSize: "20px",
+            fontWeight: "bold",
+            color: label === activeLabel ? "white" : "#555555",
+            cursor: "pointer",
+          }}>
+          <div
+            className={`flex items-center justify-center gap-3 w-[20rem] h-[20rem] transition-transform duration-300 ${
+              label === activeLabel ? "scale-110 text-3xl" : "scale-100 text-xl"
+            }`}>
+            <div className="w-6 h-6 bg-[#D9D9D9] rounded-full"></div>
+            <div className="flex flex-col items-start">
+              {label}
+              {label === activeLabel && activeLabel !== "Home" && (
+                <div
+                  style={{
+                    fontSize: "12px",
+                    color: "red",
+                  }}>
+                  {description}
                 </div>
               )}
             </div>
-          );
-        })}
+          </div>
+        </div>
+      );
+    });
+  };
+
+  return (
+    activeLabel !== "Home" && (
+      <div
+      
+        style={{
+          width: "500px",
+          height: "500px",
+          borderRadius: "50%",
+          border: "2px solid #555555",
+          transform: `rotate(${rotation}deg)`,
+          transition: "transform 0.3s ease-out",
+          position: "fixed",
+          top: "20%",
+          left: "-25%",
+          transformOrigin: "center",
+        }}>
+        {renderLabels()}
       </div>
-    </div>
+    )
   );
 };
 

@@ -1,15 +1,14 @@
 import React from "react";
 // import Navbar from "./Navbar";
 import ImageGrid from "./ImageGrid/ImageGrid";
+import RotatingCircle from "./Navbar";
 
 const History = () => {
-    return (
-        <div className="w-full h-auto flex justify-center items-center">
-            {/* <Navbar/> */}
-            <ImageGrid/>
-            {/* <h1 className="text-4xl text-white">This sis History page</h1> */}
-        </div>
-    )
-}
+  return (
+    <div className="h-auto w-full justify-center items-center flex ">
+      <ImageGrid />
+    </div>
+  );
+};
 
 export default History;
