@@ -63,7 +63,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
 
       const x = radius * Math.cos((angle * Math.PI) / 180);
       const y = radius * Math.sin((angle * Math.PI) / 180);
-      const description = descriptions[label];
+      const description = descriptions[label as keyof typeof descriptions];
+
+
 
       const handleClick = () => {
         // Call scrollToSection only for recognized sections
