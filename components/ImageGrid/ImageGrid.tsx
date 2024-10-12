@@ -75,7 +75,7 @@ const ImageGridItem: React.FC<ImageGridItemProps> = ({ title, description, image
 
     return (
         <div
-            className={`relative m-2 h-screen w-full md:w-[15vw]  transition-all duration-300 ease-in-out transform pointer-events-none md:pointer-events-auto ${
+            className={`relative m-2 h-screen w-screen md:w-[15vw]  transition-all duration-300 ease-in-out transform pointer-events-none md:pointer-events-auto ${
                 isHovered ? "flex-grow" : "flex-shrink"
             } text-[#AAAAAA] font-bold text-2xl p-2`}
             onMouseEnter={() => setIsHovered(true)}

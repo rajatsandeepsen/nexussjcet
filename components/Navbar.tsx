@@ -76,6 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
       return (
         <div
           key={index}
+          
           onClick={handleClick}
           style={{
             position: "absolute",
@@ -114,6 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollToSection }) => {
   return (
     activeLabel !== "Home" && (
       <div
+      
         style={{
           width: "500px",
           height: "500px",

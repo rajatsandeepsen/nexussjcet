@@ -61,21 +61,24 @@ export default function Home() {
         strokeDasharray="5,5"
         className="absolute inset-0"
       />
-      <Navbar 
-        scrollToSection={scrollToSection} // Pass the function as a prop
-      />
+      {/* Navbar visible only on md screens and above */}
+      <div className="hidden md:block">
+        <Navbar 
+          scrollToSection={scrollToSection} // Pass the function as a prop
+        />
+      </div>
       <div ref={heroRef}>
         <Hero />
       </div>
       <div className="h-auto w-full flex justify-center items-center ">
-        <div className="h-auto w-full flex flex-col gap-10 justify-end items-end">
+        <div className="h-auto w-full flex flex-col gap-10 justify-center items-end">
           <section ref={historyRef}>
             <History />
           </section>
           <section ref={eventsRef}>
             <EventsPage />
           </section>
-          <section ref={teamsRef}>
+          <section className="hidden" ref={teamsRef}>
             <TeamsPage />
           </section>
         </div>
