@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 export default function GameoverPage() {
@@ -11,7 +12,12 @@ export default function GameoverPage() {
 					To contact us or to ask Any Questions , Join this group
 				</p>
 				{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-				<button className="px-5 py-2 bg-white text-[#4fadf5] flex items-center justify-center rounded-full">
+				<button
+					className="px-5 py-2 bg-white text-[#4fadf5] flex items-center justify-center rounded-full"
+					onClick={() => {
+						window.location.href = "https://chat.whatsapp.com/group-link";
+					}}
+				>
 					Join Group
 				</button>
 			</div>
