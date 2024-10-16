@@ -12,7 +12,7 @@ const RegistrationPage = () => {
 
     return (
         <div className="flex flex-col h-3/4 w-screen p-8 md:p-4 items-center justify-between gap-8 text-white font-pixelify relative">
-            <h1 className="font-medium text-4xl md:text-5xl text-[#F0FF47] text-center">
+            <h1 className="font-medium text-4xl  md:text-6xl text-[#F0FF47] text-center">
                 Register Now
             </h1>
             <div className="flex flex-col items-center justify-around w-full md:w-1/2 gap-5">
