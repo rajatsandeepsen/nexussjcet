@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import FossButton from "./button";
 import Fireplace from "./fireplace";
 
 export default function HomePage() {
