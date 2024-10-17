@@ -11,8 +11,8 @@ export default function SpeakerPage() {
 	};
 	return (
 		<div className="relative flex h-screen w-screen flex-col items-center justify-around">
-			<div className="p-4 text-center">
-				<div className="relative mb-9 flex flex-col items-center justify-center md:mb-0 md:flex-row">
+			<div className="p-4 text-center flex flex-col items-center justify-center">
+				<div className="relative mb-9 flex flex-col items-center justify-center md:mb-0 md:flex-row -mt-[10rem]">
 					<img
 						src="./fossday/megaphone.png"
 						alt="megaphone"
@@ -39,12 +39,29 @@ export default function SpeakerPage() {
 				</div>
 			</div>
 
-			<img
-				src="./fossday/floor.png"
-				alt=""
-				className="h-20 w-auto md:h-auto md:w-full"
-			/>
-
+			<div className="-z-1 absolute bottom-0">
+				<img
+					src="./fossday/floor.png"
+					alt=""
+					className="h-20 w-auto md:h-auto md:w-full"
+				/>
+				
+				<div className="w-[13%] right-96 scale-50 bottom-[calc(30%)] absolute flex flex-col">
+				
+				</div>
+				<img
+					src="./fossday/tree3.png"
+					alt=""
+					className="w-[13%] bottom-[30%] -translate-y-2 left-32 scale-75 absolute"
+				/>
+				<img
+					src="./fossday/tree3.png"
+					alt=""
+					className="w-[13%] bottom-[30%] -translate-y-2 absolute"
+				/>
+				
+				
+			</div>
 			{/* <img
 				src="./fossday/tree3.png"
 				alt=""
