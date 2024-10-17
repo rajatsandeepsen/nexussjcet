@@ -23,6 +23,9 @@ const config = {
         pixelify: ["Pixelify Sans", "sans-serif"]
       },
       colors: {
+        fossday: {
+          border: "hsl(var(--fossday-border))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
