@@ -16,7 +16,7 @@ export default function SpeakerPage() {
 					<WavyText />
 				</div>
 				<div className="flex flex-col items-center justify-center gap-8">
-					<div className="w-full rounded-none border-2 border-yellow-500 border-dashed bg-white/30 p-8 font-bold text-xl md:text-2xl text-white backdrop-blur-md md:w-[70vw] flex flex-col gap-6">
+					<div className="w-full rounded-none border-2 border-yellow-500 border-dashed bg-white/30 p-4 md:p-8 font-bold text-lg md:text-2xl text-white backdrop-blur-md md:w-[70vw] flex flex-col gap-4 md:gap-6">
 						<p>
 							If you want to speak at the FOSSDAY of Nov 9th 2024,
 							<br />
