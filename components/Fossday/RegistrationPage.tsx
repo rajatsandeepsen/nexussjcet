@@ -1,14 +1,7 @@
-"use client";
-
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import React from "react";
 
 const RegistrationPage = () => {
-	const router = useRouter();
-
-	const handleRegisterClick = () => {
-		router.push("/fossday/register");
-	};
 
 	return (
 		<div className="flex flex-col h-screen w-screen p-8 md:p-4 items-center justify-around gap-8 text-white font-pixelify relative">
@@ -31,13 +24,14 @@ const RegistrationPage = () => {
 					<li>Intro to Docker and DevOps (Mid)</li>
 					<li>Intro to OpenTofu (Advanced)</li>
 				</ul>
-				<button
-					className="rounded-full bg-white px-8 py-2 text-2xl md:text-3xl text-[#4fadf5] mt-8"
-					onClick={handleRegisterClick}
-					type="button"
-				>
-					Register
-				</button>
+				<Link href="/fossday/register">
+					<button
+						className="rounded-full bg-white px-8 py-2 text-2xl md:text-3xl text-[#4fadf5] mt-8"
+						type="button"
+					>
+						Register
+					</button>
+				</Link>
 			</div>
 		</div>
 	);
