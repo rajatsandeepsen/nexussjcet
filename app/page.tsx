@@ -1,11 +1,11 @@
 "use client";
-import { useEffect, useState, useRef } from "react";
-import GridPattern from "@/components/magicui/grid-pattern";
+import EventsPage from "@/components/EventsPage";
 import Hero from "@/components/Hero";
 import History from "@/components/History";
-import EventsPage from "@/components/EventsPage";
-import TeamsPage from "@/components/TeamsPage";
 import Navbar from "@/components/Navbar";
+import TeamsPage from "@/components/TeamsPage";
+import GridPattern from "@/components/magicui/grid-pattern";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -42,9 +42,10 @@ export default function Home() {
 
   if (loading) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center relative">
+      <main className="relative flex min-h-screen flex-col items-center justify-center">
         <div className="w-96">
-          <img
+          {/* biome-ignore lint/a11y/useAltText: <explanation> */}
+<img
             src="./logo.svg"
             className="repeat-infinite animate-pulse transition-all ease-out"
           />
@@ -54,7 +55,7 @@ export default function Home() {
   }
 
   return (
-    <div className="relative w-screen h-auto">
+    <div className="relative h-auto w-screen">
       <GridPattern
         width={50}
         height={50}
@@ -70,8 +71,8 @@ export default function Home() {
       <div ref={heroRef}>
         <Hero />
       </div>
-      <div className="h-auto w-full flex justify-center items-center ">
-        <div className="h-auto w-full flex flex-col gap-10 justify-center items-end">
+      <div className="flex h-auto w-full items-center justify-center">
+        <div className="flex h-auto w-full flex-col items-end justify-center gap-10">
           <section ref={historyRef}>
             <History />
           </section>
