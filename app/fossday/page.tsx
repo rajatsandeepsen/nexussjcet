@@ -14,10 +14,10 @@ export default function FossDay() {
 			<HomePage/>
 			<SpeakerPage/>
 			<AboutPage />
-			<TimelinePage/>
+			{/* <TimelinePage/>
 			<CommunityPage/>
 			<RegistrationPage/>
-			<GameoverPage/>
+			<GameoverPage/> */}
 		</div>
 	);
 }

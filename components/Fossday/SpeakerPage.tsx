@@ -1,14 +1,9 @@
-"use client";
-import { useRouter } from "next/navigation";
-import React from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronRight } from "lucide-react";
+import Link from "next/link";
 import WavyText from "./WavyText";
 
 export default function SpeakerPage() {
-	const router = useRouter();
-
-	const handleRegisterClick = () => {
-		router.push("/fossday/speaker");
-	};
 	return (
 		<div className="relative flex h-screen w-screen flex-col items-center justify-around">
 			<div className="p-4 text-center flex flex-col items-center justify-center">
@@ -16,26 +11,41 @@ export default function SpeakerPage() {
 					<img
 						src="./fossday/megaphone.png"
 						alt="megaphone"
-						className="mx-4 w-full md:w-[20rem]"
+						className="w-1/6"
 					/>
 					<WavyText />
 				</div>
 				<div className="flex flex-col items-center justify-center gap-8">
-					<div className="w-full rounded-full border-2 border-yellow-500 border-dashed bg-white/30 px-6 py-6 font-pixelify text-3xl text-white backdrop-blur-md md:w-[70vw] md:px-6 md:py-4">
+					<div className="w-full rounded-none border-2 border-yellow-500 border-dashed bg-white/30 p-8 font-bold text-xl md:text-2xl text-white backdrop-blur-md md:w-[70vw] flex flex-col gap-6">
+						<p>
+							If you want to speak at the FOSSDAY of Nov 9th 2024,
+							<br />
+							please fillout and submit this form. 
+							<br/>The submission deadline is
+							1st Nov, 2024
+						</p>
+
+						<p>
+							You can share your experiences and insights regarding FOSS Or
+							Introduce them to new FOSS technologies or take time to share your
+							memories about Abraham Raji
+						</p>
 						<p>
 							Submit your proposal today and join us in celebrating and
 							promoting FOSS!
 						</p>
 					</div>
 
-					{/* biome-ignore lint/a11y/useButtonType: <explanation> */}
-					{/* biome-ignore lint/nursery/useSortedClasses: <explanation> */}
-					<button
-						className="mb-6 w-[20rem] rounded-full bg-white px-6 py-2 font-pixelify text-2xl text-blue-500 shadow hover:shadow-lg"
-						onClick={handleRegisterClick}
-					>
-						Register Now
-					</button>
+					<Link href="/fossday/speaker">
+						<Button
+							className="mt-10 rounded-full border-4 border-fossday-border border-t-0 border-l-0 bg-white font-pixelify"
+							size="lg"
+							variant="secondary"
+						>
+							<span className="text-xl">Submit Proposal</span>
+							<ChevronRight />
+						</Button>
+					</Link>
 				</div>
 			</div>
 
@@ -45,10 +55,8 @@ export default function SpeakerPage() {
 					alt=""
 					className="h-20 w-auto md:h-auto md:w-full"
 				/>
-				
-				<div className="w-[13%] right-96 scale-50 bottom-[calc(30%)] absolute flex flex-col">
-				
-				</div>
+
+				<div className="w-[13%] right-96 scale-50 bottom-[calc(30%)] absolute flex flex-col" />
 				<img
 					src="./fossday/tree3.png"
 					alt=""
@@ -59,8 +67,6 @@ export default function SpeakerPage() {
 					alt=""
 					className="w-[13%] bottom-[30%] -translate-y-2 absolute"
 				/>
-				
-				
 			</div>
 			{/* <img
 				src="./fossday/tree3.png"
