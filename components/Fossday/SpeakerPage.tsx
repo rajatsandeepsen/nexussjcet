@@ -48,31 +48,6 @@ export default function SpeakerPage() {
 					</Link>
 				</div>
 			</div>
-
-			<div className="-z-1 absolute bottom-0">
-				<img
-					src="./fossday/floor.png"
-					alt=""
-					className="h-20 w-auto md:h-auto md:w-full"
-				/>
-
-				<div className="w-[13%] right-96 scale-50 bottom-[calc(30%)] absolute flex flex-col" />
-				<img
-					src="./fossday/tree3.png"
-					alt=""
-					className="w-[13%] bottom-[30%] -translate-y-2 left-32 scale-75 absolute"
-				/>
-				<img
-					src="./fossday/tree3.png"
-					alt=""
-					className="w-[13%] bottom-[30%] -translate-y-2 absolute"
-				/>
-			</div>
-			{/* <img
-				src="./fossday/tree3.png"
-				alt=""
-				className="hidden md:block absolute bottom-0 left-40 transform -translate-x-1/2 -translate-y-2 w-[13%] scale-75"
-			/> */}
 		</div>
 	);
 }

@@ -1,4 +1,3 @@
-
 import AboutPage from "@/components/Fossday/AboutPage";
 import CommunityPage from "@/components/Fossday/CommunityPage";
 import GameoverPage from "@/components/Fossday/GameoverPage";
@@ -10,26 +9,25 @@ import React from "react";
 
 export default function FossDay() {
 	return (
-		<div className="h-auto w-screen bg-[#4fadf5] overflow-x-hidden">
-			<HomePage/>
-			<SpeakerPage/>
-			<Gap/>
+		<div className="h-auto bg-[#4fadf5] overflow-x-hidden">
+			<GameoverPage />
+			<HomePage />
+			<SpeakerPage />
+			<Gap />
 			<AboutPage />
-			<Gap/>
-			<TimelinePage/>
-			<Gap/>
-			<CommunityPage/>
-			<RegistrationPage/>
-			<GameoverPage/> 
+			<Gap />
+			<TimelinePage />
+			<Gap />
+			<CommunityPage />
+			<Gap />
+			<RegistrationPage />
+			<Gap />
+			<br/>
+			<Gap />
 		</div>
 	);
 }
 
-
 const Gap = () => {
-	return ( 
-		<div className="my-44">
-
-		</div>
-	 );
-}
+	return <div className="my-44" />;
+};
