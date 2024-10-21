@@ -6,44 +6,44 @@ export default function TimelinePage() {
 	const data = [
 		{
 			title: "Registration Starts",
-			content: "online, 200/- per head",
+			content: "Pay 200/- per head online, Enjoy 200 days worth of fun",
 			time: "October 18th",
 		},
 		{
 			title: "Registration Ends",
-			content: "sad",
+			content: "Try again next year... or wait.. Will you?",
 			time: "November 7th 11:59pm",
 		},
 		{
 			title: "Gate opens",
-			content: "SJCET Palai",
+			content: "Make sure you smile at the Security when u come past the gate, Just dont be too late.",
 			time: "November 9th 9:00am",
 		},
 		{
 			title: "The FOSSDAY",
-			content: "at SJCET Palai, St. Francis Hall",
+			content: "First to find Francis Hall gets the first prize of the day (Good seating)",
 			time: "10:00am",
 		},
 	]
 	const data1 = [
 		{
 			title: "Innaugration",
-			content: "& Welcome Speech by XYZ",
+			content: "& Welcome Speech by {RESOURCE PERSON}",
 			time: "10:30am",
 		},
 		{
 			title: "Memories of Abraham",
-			content: "by XYZ",
+			content: "by {Person}",
 			time: "10:30 to 11:00",
 		},
 		{
 			title: "Expert Talks",
-			content: "about Open Source & Engineering",
+			content: "Listen to nerds talk.. well dont complain, you are here cuz you are one too",
 			time: "11:00 to 12:45",
 		},
 		{
 			title: "Lunch",
-			content: "for participants",
+			content: "enjoy the food you paid for, maybe share some with us? ",
 			time: "01:30pm",
 		},
 	]
@@ -51,22 +51,22 @@ export default function TimelinePage() {
 	const data2 = [
 		{
 			title: "Workshop Starts",
-			content: "go to Lab take your laptop out",
+			content: "Ah yes, Here we make your CPU and GPU utilizations reach 100%",
 			time: "November 9th 01:30pm",
 		},
 		{
 			title: "Snacks & Networking",
-			content: "Chaya & time for a group pic",
+			content: "Chaya & time for a group pic, might as well share linkdin and um... tinder? ",
 			time: "30mins",
 		},
 		{
 			title: "Workshop Resumes",
-			content: "go to Lab take your laptop out",
+			content: "back to frying your laptop's chips ",
 			time: "November 9th 01:30pm",
 		},
 		{
 			title: "The END",
-			content: "go home",
+			content: "bid farewell and go back home to your mama",
 			time: "04:30am",
 		},
 	];
