@@ -30,11 +30,11 @@ const data = [
 
 export default function AboutPage() {
 	return (
-		<div className="flex flex-col gap-40 md:gap-52 items-center justify-around p-4">
+		<div className="flex flex-col items-center justify-around gap-40 p-4 md:gap-52">
 			{data.map((e) => (
 				<div
 					key={e.title}
-					className="text-center w-full lg:w-3/4 xl:w-1/2"   
+					className="w-full text-center lg:w-3/4 xl:w-1/2"   
 				>
 					<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
 						{e.title}
