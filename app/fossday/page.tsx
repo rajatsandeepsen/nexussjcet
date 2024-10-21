@@ -13,11 +13,23 @@ export default function FossDay() {
 		<div className="h-auto w-screen bg-[#4fadf5] overflow-x-hidden">
 			<HomePage/>
 			<SpeakerPage/>
+			<Gap/>
 			<AboutPage />
-			{/* <TimelinePage/>
+			<Gap/>
+			<TimelinePage/>
+			<Gap/>
 			<CommunityPage/>
 			<RegistrationPage/>
-			<GameoverPage/> */}
+			<GameoverPage/> 
 		</div>
 	);
+}
+
+
+const Gap = () => {
+	return ( 
+		<div className="my-44">
+
+		</div>
+	 );
 }

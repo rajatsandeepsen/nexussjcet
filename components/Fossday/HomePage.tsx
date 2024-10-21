@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { Text } from "../ui/text";
 import Fireplace from "./fireplace";
 
 export default function HomePage() {
@@ -8,40 +9,40 @@ export default function HomePage() {
 		<div className="relative flex h-screen w-screen flex-col items-center justify-center text-center font-pixelify text-white">
 			<div className="absolute top-0 h-64 w-full left-0">
 				<div className="h-full w-full relative">
-										<img
-					  src="./fossday/cloud1.png"
-					  alt=""
-					  className="w-60 top-3 left-32 absolute animate-float delay-[0.1s]"
+					<img
+						src="./fossday/cloud1.png"
+						alt=""
+						className="w-60 top-3 left-32 absolute animate-float delay-[0.1s]"
 					/>
 					<img
-					  src="./fossday/cloud2.png"
-					  alt=""
-					  className="w-60 bottom-8 right-64 absolute animate-float delay-[0.3s]"
+						src="./fossday/cloud2.png"
+						alt=""
+						className="w-60 bottom-8 right-64 absolute animate-float delay-[0.3s]"
 					/>
 					<img
-					  src="./fossday/cloud3.png"
-					  alt=""
-					  className="w-60 bottom-3 left-64 absolute animate-float delay-[0.5s]"
+						src="./fossday/cloud3.png"
+						alt=""
+						className="w-60 bottom-3 left-64 absolute animate-float delay-[0.5s]"
 					/>
 					<img
-					  src="./fossday/cloud4.png"
-					  alt=""
-					  className="w-60 -bottom-64 left-20 absolute animate-float delay-[0.7s]"
+						src="./fossday/cloud4.png"
+						alt=""
+						className="w-60 -bottom-64 left-20 absolute animate-float delay-[0.7s]"
 					/>
 					<img
-					  src="./fossday/cloud5.png"
-					  alt=""
-					  className="w-60 -bottom-80 right-32 absolute animate-float delay-[0.9s]"
+						src="./fossday/cloud5.png"
+						alt=""
+						className="w-60 -bottom-80 right-32 absolute animate-float delay-[0.9s]"
 					/>
 					<img
-					  src="./fossday/cloud6.png"
-					  alt=""
-					  className="w-60 top-10 left-[50%] absolute animate-float delay-[1.1s]"
+						src="./fossday/cloud6.png"
+						alt=""
+						className="w-60 top-10 left-[50%] absolute animate-float delay-[1.1s]"
 					/>
 					<img
-					  src="./fossday/cloud7.png"
-					  alt=""
-					  className="w-60 top-12 left-96 absolute animate-float delay-[1.3s]"
+						src="./fossday/cloud7.png"
+						alt=""
+						className="w-60 top-12 left-96 absolute animate-float delay-[1.3s]"
 					/>
 				</div>
 			</div>
@@ -49,21 +50,17 @@ export default function HomePage() {
 				<div className="mb-10 w-24">
 					<img src="./header-logo.svg" alt="Logo" />
 				</div>
-				<h2 className="text-white text-xl [text-shadow:1px_1px_hsl(var(--fossday-border))] md:text-3xl">
+				<Text variant="fossday" coloring={"fossday-white1"} size={"p"}>
 					St. Joseph's College of Engineering and Technology, Palai
-				</h2>
-				<h1 className="font-bold text-7xl [text-shadow:4px_4px_hsl(var(--fossday-border))] md:text-9xl">
+				</Text>
+				<Text variant="fossday" coloring={"fossday-white"}>
 					FOSSDAY '24
-				</h1>
-				<h2 className="text-xl text-yellow-300 [text-shadow:1px_1px_orange] md:text-3xl">
+				</Text>
+				<Text variant="fossday" coloring={"fossday-yellow"} size={"p"}>
 					November 9th, 2024 <br /> 9:00 AM - 4:30 PM
-				</h2>
+				</Text>
 				<Link href="/fossday/register">
-					<Button
-						className="mt-10 rounded-full border-4 border-fossday-border border-t-0 border-l-0 bg-white"
-						size="lg"
-						variant="secondary"
-					>
+					<Button size="lg" variant="fossday">
 						<span className="text-xl">Register Now</span>
 						<ChevronRight />
 					</Button>

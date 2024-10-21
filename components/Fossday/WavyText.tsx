@@ -1,11 +1,12 @@
 "use client"
 import type React from 'react';
+import { Text } from '../ui/text';
 
 const WavyText: React.FC = () => {
     const text = "Call for Speakers"; 
 
     return (
-        <h2 className="text-4xl capitalize sm:text-4xl md:text-6xl font-medium text-yellow-300 font-pixelify [text-shadow:1px_1px_orange] mb-4">
+        <Text variant={"fossday"} size={"h2"} coloring={"fossday-yellow"} >
             {/* {text.split('').map((letter, index) => (
                 <span
                     // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
@@ -31,7 +32,7 @@ const WavyText: React.FC = () => {
                     }
                 }
             `}</style> */}
-        </h2>
+        </Text>
     );
 };
 

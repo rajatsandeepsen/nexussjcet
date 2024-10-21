@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { Text } from "../ui/text";
 import WavyText from "./WavyText";
 
 export default function SpeakerPage() {
@@ -17,30 +18,29 @@ export default function SpeakerPage() {
 				</div>
 				<div className="flex flex-col items-center justify-center gap-8">
 					<div className="w-full rounded-none border-2 border-yellow-500 border-dashed bg-white/30 p-8 font-bold text-xl md:text-2xl text-white backdrop-blur-md md:w-[70vw] flex flex-col gap-6">
-						<p>
+						<Text coloring="white" size={"p"}>
 							If you want to speak at the FOSSDAY of Nov 9th 2024,
 							<br />
 							please fillout and submit this form. 
 							<br/>The submission deadline is
 							1st Nov, 2024
-						</p>
+						</Text>
 
-						<p>
+						<Text coloring="white" size={"p"}>
 							You can share your experiences and insights regarding FOSS Or
 							Introduce them to new FOSS technologies or take time to share your
 							memories about Abraham Raji
-						</p>
-						<p>
+						</Text>
+						<Text coloring="white" size={"p"}>
 							Submit your proposal today and join us in celebrating and
 							promoting FOSS!
-						</p>
+						</Text>
 					</div>
 
 					<Link href="/fossday/speaker">
 						<Button
-							className="mt-10 rounded-full border-4 border-fossday-border border-t-0 border-l-0 bg-white font-pixelify"
 							size="lg"
-							variant="secondary"
+							variant="fossday"
 						>
 							<span className="text-xl">Submit Proposal</span>
 							<ChevronRight />

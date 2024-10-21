@@ -1,3 +1,4 @@
+import { Text } from "../ui/text";
 
 const data = [
 	{
@@ -21,7 +22,7 @@ const data = [
 			"Students, Professional, doesn't matter, all are welcomed. You don't need to be a tech expert – just bring your curiosity and laptop to learn!",
 	},
 	{
-		title: " Event Highlights",
+		title: "Event Highlights",
 		content:
 			"Network with like-minded tech enthusiasts, Earn a certificate of participation, Receive FOSS-themed merchandise, Develop practical skills in open source technologies, Be part of a growing movement in software development",
 	},
@@ -29,18 +30,19 @@ const data = [
 
 export default function AboutPage() {
 	return (
-		<div className="flex flex-col w-full min-h-screen p-4 gap-40 my-20 items-center justify-around">
+		<div className="flex flex-col w-full min-h-screen gap-40 md:gap-52 items-center justify-around">
 			{data.map((e) => (
 				<div
 					key={e.title}
-					className="flex flex-col items-center justify-center text-center w-full lg:w-3/4 xl:w-1/2"
+					className="text-center w-full lg:w-3/4 xl:w-1/2"   
 				>
-					<h2 className="text-4xl capitalize sm:text-4xl md:text-6xl font-medium text-yellow-300 font-pixelify [text-shadow:1px_1px_orange] mb-4">
+					<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
 						{e.title}
-					</h2>
-					<p className="text-xl font-bold text-white border-fossday-border">
+					</Text>
+					<br/>
+					<Text coloring={"white"} size={"p"}>
 						{e.content}
-					</p>
+					</Text>
 				</div>
 			))}
 		</div>
