@@ -30,7 +30,7 @@ const data = [
 
 export default function AboutPage() {
 	return (
-		<div className="flex flex-col gap-40 md:gap-52 items-center justify-around">
+		<div className="flex flex-col gap-40 md:gap-52 items-center justify-around p-4">
 			{data.map((e) => (
 				<div
 					key={e.title}
