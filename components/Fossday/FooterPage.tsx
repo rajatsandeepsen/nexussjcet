@@ -1,37 +1,72 @@
-import React from 'react';
-import { Text } from "../ui/text";
-import Link from 'next/link';
+import { Text } from "@/components/ui/text";
+import Link from "next/link";
+import type React from "react";
 
 const Footer: React.FC = () => {
-  return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <Text variant="fossday" coloring="fossday-yellow" size="h3">About FOSSDAY</Text>
-            <p className="mt-2">FOSSDAY is an exciting event bringing the open source software community to SJCET. Join us to learn, explore, and contribute to the world of open source.</p>
-          </div>
-          <div>
-            <Text variant="fossday" coloring="fossday-yellow" size="h3">Quick Links</Text>
-            <ul className="mt-2">
-              <li><Link href="/app/contactus" className="hover:text-fossday-yellow">About</Link></li>
-              <li><Link href="/fossday/register" className="hover:text-fossday-yellow">Register</Link></li>
-              <li><Link href="/fossday/speaker/page" className="hover:text-fossday-yellow">Become a Speaker</Link></li>
-            </ul>
-          </div>
-          <div>
-            <Text variant="fossday" coloring="fossday-yellow" size="h3">Contact Us</Text>
-            <p className="mt-2">St Joseph's College of Engineering and Technology, Palai</p>
-            <p>Email: nexus@sjcetpalai.ac.in</p>
-            <p>Phone: +917594025304</p>
-          </div>
-        </div>
-        <div className="mt-8 text-center">
-          <Text coloring="white" size="p">&copy; 2024 FOSSDAY.  All softwares opensource-ed.</Text>
-        </div>
-      </div>
-    </footer>
-  );
+	return (
+		<footer className="pb-80 relative">
+			<div className="container mx-auto z-40 mb-60">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div>
+						<Text variant="fossday" coloring="fossday-yellow" size="h3">
+							Quick Links
+						</Text>
+						<ul className="mt-2 text-center">
+							<li>
+								<Link href="/" className="hover:text-fossday-yellow">
+									About Nexus
+								</Link>
+							</li>
+							<li>
+								<Link
+									href="/fossday/register"
+									className="hover:text-fossday-yellow"
+								>
+									Register FOSSDAY
+								</Link>
+							</li>
+							<li>
+								<Link
+									href="/fossday/speaker"
+									className="hover:text-fossday-yellow"
+								>
+									Become a Speaker
+								</Link>
+							</li>
+							<li>
+								<Link
+									href="/fossday/speaker"
+									className="hover:text-fossday-yellow"
+								>
+									Join us as Partner
+								</Link>
+							</li>
+						</ul>
+					</div>
+					<div className="text-center">
+						<Text variant="fossday" coloring="fossday-yellow" size="h3">
+							Contact Us
+						</Text>
+						<p className="mt-2">
+							St Joseph's College of Engineering and Technology, <br />
+							Choondacherry, Palai, Kerala
+						</p>
+						<a href="mailto:nexus@sjcetpalai.ac.in">
+							<p>Email: nexus@sjcetpalai.ac.in</p>
+						</a>
+						<a href="tel:+917594025304">
+							<p>Phone: +917594025304</p>
+						</a>
+					</div>
+				</div>
+			</div>
+			<img
+				src="./fossday/mountain.png"
+				alt=""
+				className="h-20 w-auto md:h-auto md:w-full transform -scale-x-100 absolute bottom-28"
+			/>
+		</footer>
+	);
 };
 
 export default Footer;

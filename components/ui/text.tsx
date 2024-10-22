@@ -3,7 +3,6 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-
 const typoVariants = cva("", {
 	variants: {
 		variant: {
@@ -13,16 +12,18 @@ const typoVariants = cva("", {
 		size: {
 			h1: "font-extrabold text-7xl md:text-9xl",
 			h2: "font-bold text-4xl capitalize md:text-6xl text-center",
-			h3: "font-bold text-4xl capitalize md:text-6xl text-center",
-			p: "text-xl md:text-2xl",
+			h3: "font-bold text-2xl md:text-4xl text-center",
+			p: "text-xl md:text-2xl text-balance",
 			span: "text-lg",
 		},
-        coloring: {
+		coloring: {
 			white: "text-white",
-            "fossday-yellow": "text-yellow-300 [text-shadow:1px_1px_orange]",
-            "fossday-white": "text-white [text-shadow:4px_4px_hsl(var(--fossday-border))]",
-            "fossday-white1": "text-white [text-shadow:1px_1px_hsl(var(--fossday-border))]"
-        }
+			"fossday-yellow": "text-yellow-300 [text-shadow:1px_1px_orange]",
+			"fossday-white":
+				"text-white [text-shadow:4px_4px_hsl(var(--fossday-border))]",
+			"fossday-white1":
+				"text-white [text-shadow:1px_1px_hsl(var(--fossday-border))]",
+		},
 	},
 	defaultVariants: {
 		coloring: "white",
@@ -33,12 +34,11 @@ const typoVariants = cva("", {
 
 export interface HeadProps
 	extends React.HTMLAttributes<HTMLHeadingElement>,
-		VariantProps<typeof typoVariants> {
-}
+		VariantProps<typeof typoVariants> {}
 
 export const Text = React.forwardRef<HTMLHeadingElement, HeadProps>(
 	({ className, variant, size, coloring, ...props }, ref) => {
-        const Slot = size ?? "h1"
+		const Slot = size ?? "h1";
 		return (
 			<Slot
 				ref={ref}
@@ -46,10 +46,10 @@ export const Text = React.forwardRef<HTMLHeadingElement, HeadProps>(
 				className={cn(
 					typoVariants({
 						variant,
-                        size,
+						size,
 						className,
-                        coloring,
-					})
+						coloring,
+					}),
 				)}
 			/>
 		);
