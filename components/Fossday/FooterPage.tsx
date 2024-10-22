@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
 			<img
 				src="./fossday/mountain.png"
 				alt=""
-				className="h-20 w-auto md:h-auto md:w-full transform -scale-x-100 absolute bottom-28"
+				className="h-80 md:h-full w-auto md:h-auto md:w-full transform -scale-x-100 absolute bottom-20 md:bottom-28"
 			/>
 		</footer>
 	);
