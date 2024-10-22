@@ -41,7 +41,7 @@ const AnimatedCardGrid: React.FC = () => {
 
     useEffect(() => {
         if (isMobile) return; // Skip animation logic for mobile
-    
+
         const observer = new IntersectionObserver(
             (entries) => {
                 for (const entry of entries) {
@@ -50,24 +50,24 @@ const AnimatedCardGrid: React.FC = () => {
                         let index = 0;
                         for (const card of cards) {
                             const position = cardPositions[index];
-                            if (position) {
-                                setTimeout(() => {
-                                    card.classList.remove("right-0", "bottom-0");
+                            setTimeout(() => {
+                                card.classList.remove("right-0", "bottom-0");
+                                if (position) {
                                     card.classList.add(position.right, position.bottom);
-                                }, index * 150);
-                            }
+                                }
+                            }, index * 150);
                             index++;
                         }
                     } else {
                         let index = 0;
                         for (const card of cards) {
                             const position = cardPositions[index];
-                            if (position) {
-                                setTimeout(() => {
+                            setTimeout(() => {
+                                if (position) {
                                     card.classList.remove(position.right, position.bottom);
-                                    card.classList.add("right-0", "bottom-0");
-                                }, index * 150);
-                            }
+                                }
+                                card.classList.add("right-0", "bottom-0");
+                            }, index * 150);
                             index++;
                         }
                     }
@@ -75,22 +75,21 @@ const AnimatedCardGrid: React.FC = () => {
             },
             { threshold: 0.5 }
         );
-    
+
         const currentGridRef = gridRef.current;
         if (currentGridRef) {
             observer.observe(currentGridRef);
         }
-    
+
         return () => {
             if (currentGridRef) {
                 observer.unobserve(currentGridRef);
             }
         };
     }, [isMobile]);
-    
 
     return (
-        <div ref={gridRef} className="mx-auto w-auto md:w-[45vw] px-4 md:px-0">
+        <div ref={gridRef} className="mx-auto w-full md:w-[45vw] px-4 md:px-0">
             <ul className={`list-none p-0 w-full ${
                 isMobile 
                 ? "flex flex-row flex-wrap justify-center gap-4" 
@@ -100,10 +99,14 @@ const AnimatedCardGrid: React.FC = () => {
                     <li
                         // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                         key={index}
-                        className={`${isMobile 
-                                ? "static my-2 w-auto sm:w-[222px]" 
-                                : "card absolute right-0 bottom-0 my-[30px_0_15px_15px] w-[222px]"
-                            }float-left h-auto cursor-pointer overflow-hidden rounded-lg shadow-lg${!isMobile && "transition-all duration-1000 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [perspective:1000px] [transform-style:preserve-3d]"}`}
+                        className={`
+                            ${isMobile 
+                                ? "static w-auto sm:w-[222px] my-2" 
+                                : "card absolute right-0 bottom-0 w-[222px] my-[30px_0_15px_15px]"
+                            }
+                            float-left h-auto cursor-pointer overflow-hidden rounded-lg shadow-lg
+                            ${!isMobile && "transition-all duration-1000 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [perspective:1000px] [transform-style:preserve-3d]"}
+                        `}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                     >
@@ -111,7 +114,7 @@ const AnimatedCardGrid: React.FC = () => {
                             <img
                                 src={cardImages[index]?.normal || ""}
                                 alt={`Card ${index + 1}`}
-                                className={`object-cover transition-opacity duration-300${
+                                className={`object-cover transition-opacity duration-300 ${
                                     hoveredIndex === index ? "opacity-0" : "opacity-100"
                                 }`}
                                 sizes="(max-width: 768px) 280px, 222px"
@@ -119,7 +122,7 @@ const AnimatedCardGrid: React.FC = () => {
                             <img
                                 src={cardImages[index]?.hover || ""}
                                 alt={`Card ${index + 1} Hover`}
-                                className={`absolute top-0 left-0 object-cover transition-opacity duration-300${
+                                className={`object-cover absolute top-0 left-0 transition-opacity duration-300 ${
                                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                                 }`}
                                 sizes="(max-width: 768px) 280px, 222px"
