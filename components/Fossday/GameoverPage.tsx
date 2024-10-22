@@ -2,7 +2,7 @@ import Fireplace from "./fireplace";
 
 export default function GameoverPage() {
 	return (
-		<div className="-z-20">
+		<div className="absolute z-20">
 			<div className="fixed top-0 h-64 w-full left-0">
 				<div className="h-full w-full relative">
 					<img
@@ -28,7 +28,7 @@ export default function GameoverPage() {
 					<img
 						src="./fossday/cloud5.png"
 						alt=""
-						className="w-60 -bottom-80 right-32 absolute animate-float delay-[0.9s]"
+						className="w-60 -bottom-80 -right-32 md:right-32 absolute animate-float delay-[0.9s]"
 					/>
 					<img
 						src="./fossday/cloud6.png"

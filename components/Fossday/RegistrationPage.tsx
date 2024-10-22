@@ -6,7 +6,7 @@ import { Text } from "../ui/text";
 
 const RegistrationPage = () => {
 	return (
-		<div className="text-center">
+		<div className="p-4 text-center">
 			<Text variant={"fossday"} coloring={"fossday-yellow"} size={"h2"}>
 				Register Now <br /> Just <span className="font-grotesk font-normal italic">₹200</span>	
 			</Text>
