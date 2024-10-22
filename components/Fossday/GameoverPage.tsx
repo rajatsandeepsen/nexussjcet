@@ -16,9 +16,9 @@ export default function GameoverPage() {
 						className="w-60 bottom-8 right-64 absolute animate-float delay-[0.3s]"
 					/>
 					<img
-						src="./fossday/cloud3.png"
+						src="./fossday/cat.png"
 						alt=""
-						className="w-60 bottom-3 left-64 absolute animate-float delay-[0.5s]"
+						className="w-16 bottom-3 left-64 absolute animate-float delay-[0.5s]"
 					/>
 					<img
 						src="./fossday/cloud4.png"
@@ -44,19 +44,24 @@ export default function GameoverPage() {
 			</div>
 			<div className="fixed bottom-0">
 				<img
-					src="./fossday/floor.png"
+					src="./fossday/new-bg.png"
+					alt=""
+					className="w-full"
+				/>
+				{/* <img
+					src="./fossday/fireplace.png"
 					alt=""
 					className="h-20 w-auto md:h-auto md:w-full"
-				/>
-				<img
+				/> */}
+				{/* <img
 					src="./fossday/tree1.png"
 					alt=""
 					className="w-[13%] left-96 scale-125 bottom-[30%] -translate-y-3 absolute"
-				/>
-				<div className="w-[13%] right-96 scale-50 bottom-[calc(30%)] absolute flex flex-col">
+				/> */}
+				<div className="left-[50%] bottom-0 absolute flex flex-col w-1/12">
 					<Fireplace />
 				</div>
-				<img
+				{/* <img
 					src="./fossday/tree3.png"
 					alt=""
 					className="w-[13%] bottom-[30%] -translate-y-2 left-32 scale-75 absolute"
@@ -75,7 +80,7 @@ export default function GameoverPage() {
 					src="./fossday/tree2.png"
 					alt=""
 					className="w-[13%] right-36 bottom-[30%] -translate-y-2 absolute"
-				/>
+				/> */}
 			</div>
 		</div>
 	);
