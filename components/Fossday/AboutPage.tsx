@@ -30,21 +30,41 @@ const data = [
 
 export default function AboutPage() {
 	return (
-		<div className="flex flex-col items-center justify-around gap-40 p-4 md:gap-52">
+		<div className="text-center container space-y-28 space-y-40">
 			{data.map((e) => (
-				<div
-					key={e.title}
-					className="w-full text-center lg:w-3/4 xl:w-1/2"   
-				>
+				<div key={e.title} className="text-center">
 					<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
 						{e.title}
 					</Text>
-					<br/>
+					<br />
 					<Text coloring={"white"} size={"p"}>
 						{e.content}
 					</Text>
 				</div>
 			))}
+			<div className="text-center">
+				<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
+					Workshops
+				</Text>
+				<br />
+				<div className="flex flex-col gap-3">
+					<div>
+						<Text coloring={"white"} size={"p"}>
+							Intro to Git & Version Control
+						</Text>
+					</div>
+					<div>
+						<Text coloring={"white"} size={"p"}>
+							Docker for DevOps & Self Hosting
+						</Text>
+					</div>
+					<div>
+						<Text coloring={"white"} size={"p"}>
+							GitHub Actions & CI/CD Pipelines
+						</Text>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }

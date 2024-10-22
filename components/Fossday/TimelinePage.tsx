@@ -75,7 +75,7 @@ export default function TimelinePage() {
 			<Text variant={"fossday"} coloring={"fossday-yellow"} size={"h2"}>
 				Time Schedule
 			</Text>
-			<div className="flex md:gap-20 gap-10 justify-center md:flex-row flex-col p-8 md:p-20">
+			<div className="flex md:gap-20 gap-10 container justify-center md:flex-row flex-col p-8 md:p-20">
 				<div>
 					{/* <Text variant={"fossday"} coloring={"fossday-yellow"} size={"h2"}>
 						Morning

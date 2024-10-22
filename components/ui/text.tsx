@@ -11,9 +11,9 @@ const typoVariants = cva("", {
 		},
 		size: {
 			h1: "font-extrabold text-7xl md:text-9xl",
-			h2: "font-bold text-4xl capitalize md:text-6xl text-center",
-			h3: "font-bold text-2xl md:text-4xl text-center",
-			p: "text-xl md:text-2xl text-balance",
+			h2: "text-center font-bold text-4xl capitalize md:text-6xl",
+			h3: "text-center font-bold text-2xl md:text-4xl",
+			p: "text-balance text-xl md:text-2xl",
 			span: "text-lg",
 		},
 		coloring: {

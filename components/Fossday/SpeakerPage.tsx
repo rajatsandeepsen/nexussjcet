@@ -6,8 +6,8 @@ import WavyText from "./WavyText";
 
 export default function SpeakerPage() {
 	return (
-		<div className="relative flex h-screen w-screen flex-col items-center justify-around">
-			<div className="p-4 text-center flex flex-col items-center justify-center">
+		<div className="relative flex h-screen container flex-col items-center justify-around">
+			<div className="text-center flex flex-col items-center justify-center">
 				<div className="relative mb-9 flex flex-col items-center justify-center md:mb-0 md:flex-row -mt-[10rem]">
 					<img
 						src="./fossday/megaphone.png"
@@ -16,8 +16,8 @@ export default function SpeakerPage() {
 					/>
 					<WavyText />
 				</div>
-				<div className="flex flex-col items-center justify-center gap-8">
-					<div className="w-full rounded-none border-2 border-yellow-500 border-dashed bg-white/30 p-8 font-bold text-xl md:text-2xl text-white backdrop-blur-md md:w-[70vw] flex flex-col gap-6">
+				<div>
+					<div className="space-y-8 border-2 border-yellow-300 border-dashed bg-white/30 p-8 backdrop-blur-md">
 						<Text coloring="white" size={"p"}>
 							If you want to speak at the FOSSDAY of Nov 9th 2024,
 							<br />
