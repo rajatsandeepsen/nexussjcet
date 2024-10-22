@@ -5,6 +5,7 @@ import History from "@/components/History";
 import Navbar from "@/components/Navbar";
 import TeamsPage from "@/components/TeamsPage";
 import GridPattern from "@/components/magicui/grid-pattern";
+import FooterPage from "@/components/Fossday/FooterPage";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
   const historyRef = useRef<HTMLDivElement>(null);
   const eventsRef = useRef<HTMLDivElement>(null);
   const teamsRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,7 +25,7 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  const scrollToSection = (section: "home" | "history" | "events" | "teams") => {
+  const scrollToSection = (section: "home" | "history" | "events" | "teams" | "footer") => {
     switch (section) {
       case "home":
         heroRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -37,6 +39,9 @@ export default function Home() {
       case "teams":
         teamsRef.current?.scrollIntoView({ behavior: "smooth" });
         break;
+      case "footer":
+        footerRef.current?.scrollIntoView({ behavior: "smooth" });
+        break;
     }
   };
 
@@ -45,7 +50,7 @@ export default function Home() {
       <main className="relative flex min-h-screen flex-col items-center justify-center">
         <div className="w-96">
           {/* biome-ignore lint/a11y/useAltText: <explanation> */}
-<img
+          <img
             src="./logo.svg"
             className="repeat-infinite animate-pulse transition-all ease-out"
           />
@@ -64,7 +69,7 @@ export default function Home() {
       />
       {/* Navbar visible only on md screens and above */}
       <div className="hidden md:block">
-        <Navbar 
+        <Navbar
           scrollToSection={scrollToSection} // Pass the function as a prop
         />
       </div>
@@ -81,6 +86,9 @@ export default function Home() {
           </section>
           <section className="hidden" ref={teamsRef}>
             <TeamsPage />
+          </section>
+          <section ref={footerRef}>
+            <FooterPage />
           </section>
         </div>
       </div>

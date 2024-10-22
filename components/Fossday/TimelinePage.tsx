@@ -28,12 +28,12 @@ export default function TimelinePage() {
 	const data1 = [
 		{
 			title: "Innaugration",
-			content: "& Welcome Speech by {RESOURCE PERSON}",
+			content: "& Welcome Speech by the expert!",
 			time: "10:30am",
 		},
 		{
 			title: "Memories of Abraham",
-			content: "by {Person}",
+			content: "by our loved ones.",
 			time: "10:30 to 11:00",
 		},
 		{
