@@ -5,6 +5,11 @@ import type React from "react";
 const Footer: React.FC = () => {
 	return (
 		<footer className="pb-80 relative">
+			<img
+				src="./fossday/mountain.png"
+				alt=""
+				className="h-auto w-full transform -scale-x-100 absolute bottom-0 z-0"
+			/>
 			<div className="container mx-auto z-40 mb-60">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 					<div>
@@ -60,11 +65,6 @@ const Footer: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<img
-				src="./fossday/mountain.png"
-				alt=""
-				className="h-20 w-auto md:h-auto md:w-full transform -scale-x-100 absolute bottom-28"
-			/>
 		</footer>
 	);
 };
