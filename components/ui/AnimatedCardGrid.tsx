@@ -15,6 +15,7 @@ type CardImage = {
 const AnimatedCardGrid: React.FC = () => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [isMobile, setIsMobile] = useState(false);
 
     const cardPositions: CardPosition[] = [
         { right: "right-[474px]", bottom: "bottom-[326px]" },
@@ -29,6 +30,18 @@ const AnimatedCardGrid: React.FC = () => {
     ];
 
     useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (isMobile) return; // Skip animation logic for mobile
+
         const observer = new IntersectionObserver(
             (entries) => {
                 for (const entry of entries) {
@@ -69,15 +82,26 @@ const AnimatedCardGrid: React.FC = () => {
                 observer.unobserve(currentGridRef);
             }
         };
-    }, [cardPositions]);
+    }, [cardPositions, isMobile]);
 
     return (
-        <div ref={gridRef} className="mx-auto w-[45vw]">
-            <ul className="relative h-[652px] list-none p-0 w-full flex items-center justify-center">
+        <div ref={gridRef} className="mx-auto w-auto md:w-[45vw] px-4 md:px-0">
+            <ul className={`list-none p-0 w-full ${
+                isMobile 
+                ? "flex flex-row flex-wrap justify-center gap-4" 
+                : "relative h-[652px] flex items-center justify-center"
+            }`}>
                 {cardPositions.map((_, index) => (
                     <li
                         key={index}
-                        className={"card absolute right-0 bottom-0 float-left my-[30px_0_15px_15px] h-auto w-[222px] cursor-pointer overflow-hidden rounded-lg shadow-lg transition-all duration-1000 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [perspective:1000px] [transform-style:preserve-3d]"}
+                        className={`
+                            ${isMobile 
+                                ? "static w-auto sm:w-[222px] my-2" 
+                                : "card absolute right-0 bottom-0 w-[222px] my-[30px_0_15px_15px]"
+                            }
+                            float-left h-auto cursor-pointer overflow-hidden rounded-lg shadow-lg
+                            ${!isMobile && "transition-all duration-1000 ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] [perspective:1000px] [transform-style:preserve-3d]"}
+                        `}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                     >
@@ -85,11 +109,10 @@ const AnimatedCardGrid: React.FC = () => {
                             <img
                                 src={cardImages[index].normal}
                                 alt={`Card ${index + 1}`}
-                                className={`object-cover transition-opacity duration-300${
+                                className={`object-cover transition-opacity duration-300 ${
                                     hoveredIndex === index ? "opacity-0" : "opacity-100"
                                 }`}
-                                sizes="222px"
-                                
+                                sizes="(max-width: 768px) 280px, 222px"
                             />
                             <img
                                 src={cardImages[index].hover}
@@ -97,8 +120,7 @@ const AnimatedCardGrid: React.FC = () => {
                                 className={`object-cover absolute top-0 left-0 transition-opacity duration-300 ${
                                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                                 }`}
-                                sizes="222px"
-                                
+                                sizes="(max-width: 768px) 280px, 222px"
                             />
                         </div>
                     </li>
