@@ -25,7 +25,7 @@ const data = [
 
 export default function CommunityPage() {
 	return (
-		<div className="p-4">
+		<div className="p-4 flex gap-9 flex-col ">
 			<Text variant={"fossday"} size={"h2"} coloring={"fossday-yellow"}>
 				Community Partners
 			</Text>
