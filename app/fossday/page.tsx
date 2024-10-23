@@ -6,6 +6,7 @@ import HomePage from "@/components/Fossday/HomePage";
 import RegistrationPage from "@/components/Fossday/RegistrationPage";
 import SpeakerPage from "@/components/Fossday/SpeakerPage";
 import TimelinePage from "@/components/Fossday/TimelinePage";
+import VolunteerPage from "@/components/Fossday/VolunteerPage";
 import React from "react";
 
 export default function FossDay() {
@@ -22,6 +23,8 @@ export default function FossDay() {
 			<CommunityPage />
 			<Gap />
 			<RegistrationPage />
+			<Gap />
+			<VolunteerPage/>
 			<Gap />
 			<Gap />
 			<FooterPage />
