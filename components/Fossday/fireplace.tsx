@@ -13,11 +13,10 @@ const Fireplace = () => {
 	return (
 		<>
 			{state ? (
-				<img src="./fossday/fire1.png" alt="" className="" />
+				<img src="./fossday/fire1.png" alt="" />
 			) : (
-				<img src="./fossday/fire2.png" alt="" className="" />
+				<img src="./fossday/fire2.png" alt="" />
 			)}
-			<img src="./fossday/fireplace.png" alt="" className="-translate-y-1" />
 		</>
 	);
 };
