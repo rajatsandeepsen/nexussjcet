@@ -19,7 +19,7 @@ export default function HomePage() {
 				<Text variant="fossday" coloring={"fossday-yellow"} size={"p"}>
 					November 9th, 2024 <br /> 9:00 AM - 4:30 PM
 				</Text>
-				<Link href="/fossday/register">
+				<Link href="/fossday/register" className="z-50">
 					<Button size="lg" variant="fossday">
 						<span className="text-xl">Register Now</span>
 						<ChevronRight />
