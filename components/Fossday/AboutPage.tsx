@@ -44,13 +44,13 @@ export default function AboutPage() {
 					</Text>
 				</div>
 			))}
-			<div className="text-center">
+			<div className="text-center ">
 				<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
 					Workshops
 				</Text>
 				<br />
-				<div className="flex flex-col gap-3 md:flex-row">
-					<div className="flex flex-col gap-2">
+				<div className="flex flex-col gap-3 md:flex-row relative z-40">
+					<div className="flex flex-col gap-2 ">
 						<Image src="/fossday/final-w1.png" alt="Intro to Github" width={1080} height={1080}/>
 						<p className="px-2 text-lg rounded-full bg-green-200 text-green-500 font-bold w-fit h-fit">Beginner</p>
 					</div>

@@ -34,7 +34,7 @@ export default function GameoverPage() {
 	}, []);
 
 	return (
-		<div className="absolute z-20 pointer-events-none">
+		<div className="absolute  pointer-events-none">
 			<div className="fixed top-0 h-64 w-full left-0">
 				<div className="h-full w-full relative">
 					<img
@@ -75,7 +75,7 @@ export default function GameoverPage() {
 				</div>
 			</div>
 			<div
-				className={`fixed bottom-0 transition-all ease-in-out ${
+				className={`fixed z-50 bottom-0 transition-all ease-in-out ${
 					isShrunk ? "-bottom-20" : "bottom-0"
 				}`}
 			>
