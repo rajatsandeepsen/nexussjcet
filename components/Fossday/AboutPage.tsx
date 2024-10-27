@@ -70,10 +70,13 @@ export default function AboutPage() {
 			))}
 			<div className="text-center ">
 				<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
-					Workshops
+					Workshops<br/>
+					<Text coloring={"white"} size={"p"}>
+					All the workshops are running at the same time, so pick your favorite and dive in!
+					</Text>
 				</Text>
 				<br />
-				<div className="flex flex-col gap-3 md:flex-row relative z-40">
+				<div className="flex flex-col gap-3 md:flex-row  relative z-40">
 					{workshops.map((workshop, index)=>(
 						<div className="flex flex-col gap-2 hover:scale-125 transition-transform ease-out duration-200 " key={index} >
 						<Image src={workshop.imageSrc} alt="Intro to Github" width={1080} height={1080}/>
