@@ -32,7 +32,7 @@ const data = [
 
 export default function AboutPage() {
 	return (
-		<div className="text-center container space-y-28 space-y-40">
+		<div className="text-center container space-y-28 space-y-40 relative z-40">
 			{data.map((e) => (
 				<div key={e.title} className="text-center">
 					<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
