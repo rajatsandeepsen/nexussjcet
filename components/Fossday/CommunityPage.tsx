@@ -20,7 +20,7 @@ const data = [
 	},
 	{
 		link: "https://makemypass.com",
-		image: "./common/makemypass.webp",
+		image: "./common/makemypass logo.png",
 	},
 	{
 		link: "https://nexus.sjcetpalai.ac.in/",
