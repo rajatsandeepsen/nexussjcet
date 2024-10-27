@@ -76,14 +76,14 @@ export default function GameoverPage() {
 			</div>
 			<div
 				className={`fixed z-50 bottom-0 transition-all ease-in-out ${
-					isShrunk ? "-bottom-20" : "bottom-0"
+					isShrunk ? "md:-bottom-20 bottom-0 " : "md:bottom-0"
 				}`}
 			>
 				<img
 					src="./fossday/mountain.png"
 					alt=""
-					className={`h-auto w-full transform -scale-x-100 absolute bottom-5 md:bottom-0 -z-20 transition-transform transition-opacity duration-700 ease-out ${
-						isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"
+					className={`h-auto w-full transform -scale-x-100 absolute bottom-0 -z-20 transition-transform transition-opacity duration-700 ease-out ${
+						isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20 "
 					}`}
 				/>
 
