@@ -13,7 +13,7 @@ export default function VolunteerPage() {
 			>
 				Ping Us
 			</Text>
-			<div className="w-full flex items-center justify-center">
+			<div className="w-full flex items-center justify-center ">
 				<AnimatedCardGrid />
 			</div>
 		</div>
