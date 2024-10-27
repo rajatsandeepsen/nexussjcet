@@ -2,7 +2,7 @@ import Fireplace from "./fireplace";
 
 export default function GameoverPage() {
 	return (
-		<div className="absolute z-20">
+		<div className="absolute z-20 pointer-events-none">
 			<div className="fixed top-0 h-64 w-full left-0">
 				<div className="h-full w-full relative">
 					<img
