@@ -19,6 +19,10 @@ const data = [
 		image: "./common/fossunited.svg",
 	},
 	{
+		link: "https://makemypass.com",
+		image: "./common/makemypass.webp",
+	},
+	{
 		link: "https://nexus.sjcetpalai.ac.in/",
 		image: "./common/mozilla.png",
 	},
