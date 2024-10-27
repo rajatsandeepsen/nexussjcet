@@ -114,7 +114,7 @@ const AnimatedCardGrid: React.FC = () => {
                             <img
                                 src={cardImages[index]?.normal || ""}
                                 alt={`Card ${index + 1}`}
-                                className={`object-cover transition-opacity duration-300 ${
+                                className={`object-cover transition-opacity duration-300 ease-out ${
                                     hoveredIndex === index ? "opacity-0" : "opacity-100"
                                 }`}
                                 sizes="(max-width: 768px) 280px, 222px"
@@ -122,7 +122,7 @@ const AnimatedCardGrid: React.FC = () => {
                             <img
                                 src={cardImages[index]?.hover || ""}
                                 alt={`Card ${index + 1} Hover`}
-                                className={`object-cover absolute top-0 left-0 transition-opacity duration-300 ${
+                                className={`object-cover absolute top-0 left-0 transition-opacity ease-out duration-300 ${
                                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                                 }`}
                                 sizes="(max-width: 768px) 280px, 222px"
