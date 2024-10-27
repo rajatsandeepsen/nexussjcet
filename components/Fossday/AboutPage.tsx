@@ -62,10 +62,10 @@ export default function AboutPage() {
 						<Image src="/fossday/final-w3.png" alt="Intro to Docker" width={1080} height={1080}/>
 						<p className="px-2 text-lg rounded-full bg-red-200 text-red-500 font-bold w-fit h-fit">Veteran</p>
 					</div>
-					<div className="flex flex-col gap-2">
+					{/* <div className="flex flex-col gap-2">
 						<Image src="/fossday/final-w4.png" alt="Intro to Github Actions" width={1080} height={1080}/>
 						<p className="px-2 text-lg rounded-full bg-red-200 text-red-500 font-bold w-fit h-fit">Veteran</p>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
