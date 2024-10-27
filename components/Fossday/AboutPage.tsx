@@ -33,26 +33,25 @@ const data = [
 const workshops = [
 	{
 		tag: "Beginner",
-		imageSrc: "/fossday/w-1.png"
+		imageSrc: "/fossday/w-1.png",
 	},
 	{
 		tag: "Intermediate",
-		imageSrc: "/fossday/w-2.png"
+		imageSrc: "/fossday/w-2.png",
 	},
 	{
 		tag: "Advanced",
-		imageSrc: "/fossday/w-3.png"
+		imageSrc: "/fossday/w-3.png",
 	},
 	{
 		tag: "Beginner",
-		imageSrc: "/fossday/w-4.png"
+		imageSrc: "/fossday/w-4.png",
 	},
 	{
 		tag: "Beginner",
-		imageSrc: "/fossday/w-5.png"
-	}
+		imageSrc: "/fossday/w-5.png",
+	},
 ];
-
 
 export default function AboutPage() {
 	return (
@@ -72,13 +71,27 @@ export default function AboutPage() {
 				<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
 					Workshops
 				</Text>
+				<Text coloring={"white"} size={"p"}>
+					All the workshops are running at the same time, so pick your favorite
+					and dive in!
+				</Text>
 				<br />
-				<div className="flex flex-col gap-3 md:flex-row relative z-40">
-					{workshops.map((workshop, index)=>(
-						<div className="flex flex-col gap-2 hover:scale-125 transition-transform ease-out duration-200 " key={index} >
-						<Image src={workshop.imageSrc} alt="Intro to Github" width={1080} height={1080}/>
-						<p className="px-2 text-lg rounded-full bg-green-200 text-green-500 font-bold w-fit h-fit">{workshop.tag}</p>
-					</div>
+				<div className="flex flex-col gap-3 md:flex-row  relative z-40">
+					{workshops.map((workshop, index) => (
+						<div
+							className="flex flex-col gap-2 hover:scale-125 transition-transform ease-out duration-200 "
+							key={index}
+						>
+							<Image
+								src={workshop.imageSrc}
+								alt="Intro to Github"
+								width={1080}
+								height={1080}
+							/>
+							<p className="px-2 text-lg rounded-full bg-green-200 text-green-500 font-bold w-fit h-fit">
+								{workshop.tag}
+							</p>
+						</div>
 					))}
 				</div>
 			</div>
