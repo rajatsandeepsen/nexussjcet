@@ -1,5 +1,7 @@
 import { Text } from "../ui/text";
 
+import Image from "next/image";
+
 const data = [
 	{
 		title: "Welcome to FOSSDAY",
@@ -47,21 +49,18 @@ export default function AboutPage() {
 					Workshops
 				</Text>
 				<br />
-				<div className="flex flex-col gap-3">
-					<div>
-						<Text coloring={"white"} size={"p"}>
-							Intro to Git & Version Control
-						</Text>
+				<div className="flex flex-col gap-3 md:flex-row">
+					<div className="flex flex-col gap-2">
+						<Image src="/fossday/final-w1.png" alt="Intro to Github" width={1080} height={1080}/>
+						<p className="px-2 text-lg rounded-full bg-green-200 text-green-500 font-bold w-fit h-fit">Beginner</p>
 					</div>
-					<div>
-						<Text coloring={"white"} size={"p"}>
-							Docker for DevOps & Self Hosting
-						</Text>
+					<div className="flex flex-col gap-2">
+						<Image src="/fossday/final-w3.png" alt="Intro to Docker" width={1080} height={1080}/>
+						<p className="px-2 text-lg rounded-full bg-red-200 text-red-500 font-bold w-fit h-fit">Veteran</p>
 					</div>
-					<div>
-						<Text coloring={"white"} size={"p"}>
-							GitHub Actions & CI/CD Pipelines
-						</Text>
+					<div className="flex flex-col gap-2">
+						<Image src="/fossday/final-w2.png" alt="Intro to Github Actions" width={1080} height={1080}/>
+						<p className="px-2 text-lg rounded-full bg-blue-200 text-blue-500 font-bold w-fit h-fit">Novice</p>
 					</div>
 				</div>
 			</div>

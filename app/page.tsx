@@ -5,7 +5,6 @@ import History from "@/components/History";
 import Navbar from "@/components/Navbar";
 import TeamsPage from "@/components/TeamsPage";
 import GridPattern from "@/components/magicui/grid-pattern";
-import FooterPage from "@/components/Fossday/FooterPage";
 import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
@@ -86,10 +85,7 @@ export default function Home() {
           </section>
           <section className="hidden" ref={teamsRef}>
             <TeamsPage />
-          </section>
-          <section ref={footerRef}>
-            <FooterPage />
-          </section>
+          </section>        
         </div>
       </div>
     </div>
