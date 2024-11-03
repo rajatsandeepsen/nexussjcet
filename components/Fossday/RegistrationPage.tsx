@@ -22,10 +22,14 @@ const RegistrationPage = () => {
 					<ChevronRight />
 				</Button>
 			</Link>
+
 			<br />
 			<Text className="!text-sm" coloring={"white"} size={"p"}>
 				NB: 200 is for your lunch & swags, everything else is free
 			</Text>
+			<Text coloring={"white"} size={"p"}>
+				Registration closes on November 5th Tuesday, 2024
+				</Text>
 		</div>
 	);
 };

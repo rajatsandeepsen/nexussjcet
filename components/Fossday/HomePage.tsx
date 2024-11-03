@@ -5,7 +5,7 @@ import { Text } from "../ui/text";
 
 export default function HomePage() {
 	return (
-		<div className="relative flex h-screen w-screen flex-col items-center justify-center text-center font-pixelify text-white z-50">
+		<div className="relative flex h-screen w-screen flex-col items-center justify-center text-center  text-white z-50">
 			<div className="-translate-y-20 flex w-full flex-col items-center justify-center">
 				<div className="mb-10 w-24">
 					<img src="./header-logo.svg" alt="Logo" />
@@ -25,6 +25,9 @@ export default function HomePage() {
 						<ChevronRight />
 					</Button>
 				</Link>
+				<Text coloring={"white"} size={"p"}>
+					Registration closes on November 5th Tuesday, 2024
+				</Text>
 			</div>
 		</div>
 	);
