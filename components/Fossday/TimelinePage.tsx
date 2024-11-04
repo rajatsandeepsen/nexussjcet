@@ -22,54 +22,45 @@ export default function TimelinePage() {
 		{
 			title: "The FOSSDAY",
 			content: "First to find Francis Hall gets the first prize of the day (Good seating)",
-			time: "10:00am",
+			time: "09:30am",
 		},
 	]
 	const data1 = [
 		{
-			title: "Innaugration",
-			content: "& Welcome Speech by the expert!",
-			time: "10:30am",
+			title: "Inauguration",
+			content: "Inaugural speeches and software showcase.",
+			time: "9:30am - 10:00am",
 		},
 		{
-			title: "Memories of Abraham",
-			content: "by our loved ones.",
-			time: "10:30 to 11:00",
-		},
-		{
-			title: "Expert Talks",
+			title: "Tech Talks",
 			content: "Listen to nerds talk.. well dont complain, you are here cuz you are one too",
-			time: "11:00 to 12:45",
+			time: "10:00am - 12:30pm",
 		},
 		{
-			title: "Lunch",
-			content: "enjoy the food you paid for, maybe share some with us? ",
-			time: "01:30pm",
+			title: "Lunch Break",
+			content: "Enjoy the food you paid for, maybe share some with us?",
+			time: "12:30pm - 1:30pm",
 		},
-	]
+	];
 	
 	const data2 = [
 		{
-			title: "Workshop Starts",
+			title: "Workshops Start",
 			content: "Ah yes, Here we make your CPU and GPU utilizations reach 100%",
-			time: "November 9th 01:30pm",
+			time: "1:30pm - 4:00pm",
 		},
 		{
 			title: "Snacks & Networking",
-			content: "Chaya & time for a group pic, might as well share linkdin and um... tinder? ",
-			time: "30mins",
-		},
-		{
-			title: "Workshop Resumes",
-			content: "back to frying your laptop's chips ",
-			time: "November 9th 01:30pm",
+			content: "Chaya & time for a group pic, might as well share LinkedIn and um... Tinder?",
+			time: "4:00pm - 4:30pm",
 		},
 		{
 			title: "The END",
-			content: "bid farewell and go back home to your mama",
-			time: "04:30am",
+			content: "Thank you for joining us! Safe travels home.",
+			time: "4:30pm",
 		},
 	];
+	
 	return (
 		<div>
 			<Text variant={"fossday"} coloring={"fossday-yellow"} size={"h2"}>
