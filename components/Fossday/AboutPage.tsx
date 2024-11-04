@@ -52,6 +52,24 @@ const workshops = [
 		imageSrc: "/fossday/w-5.png",
 	},
 ];
+const speakers = [
+	{
+		
+		imageSrc: "/fossday/w intro-1.png",
+	},
+	{
+		
+		imageSrc: "/fossday/w intro-2.png",
+	},
+	{
+		
+		imageSrc: "/fossday/w intro-3.png",
+	},
+	{
+		
+		imageSrc: "/fossday/w intro.png",
+	},
+];
 
 export default function AboutPage() {
 	return (
@@ -91,6 +109,31 @@ export default function AboutPage() {
 							<p className="px-2 text-lg rounded-full bg-green-200 text-green-500 font-bold w-fit h-fit">
 								{workshop.tag}
 							</p>
+						</div>
+					))}
+				</div>
+			</div>
+			<div className="text-center ">
+				<Text coloring={"fossday-yellow"} size={"h2"} variant={"fossday"}>
+					Speakers
+				</Text>
+				<Text coloring={"white"} size={"p"}>
+				Meet the open-source legends bringing inspiration and energy to FOSS Day!
+				</Text>
+				<br />
+				<div className="flex flex-col gap-3 md:flex-row  relative z-40">
+					{speakers.map((speaker, index) => (
+						<div
+							className="flex flex-col gap-2 hover:scale-125 transition-transform ease-out duration-200 "
+							key={index}
+						>
+							<Image
+								src={speaker.imageSrc}
+								alt="FOSSDAY Speakers"
+								width={1080}
+								height={1080}
+							/>
+							
 						</div>
 					))}
 				</div>
