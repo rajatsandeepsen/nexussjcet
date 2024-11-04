@@ -129,7 +129,7 @@ export default function AboutPage() {
 						>
 							<Image
 								src={speaker.imageSrc}
-								alt="Intro to Github"
+								alt="FOSSDAY Speakers"
 								width={1080}
 								height={1080}
 							/>
