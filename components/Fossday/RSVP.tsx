@@ -11,7 +11,7 @@ export default function RSVP(){
             </Text>
             <br/>
             <Text coloring={"white"} size={"p"}>
-            Confirm your spot by filling out the RSVP form before 3pm, 5th November 2024.Don’t miss out on this day of open-source exploration and collaboration.
+            Confirm your spot by filling out the RSVP form before 3pm, 6th November 2024.Don’t miss out on this day of open-source exploration and collaboration.
             </Text>
             <Link href="/fossday/rsvp" className="z-50">
                 <Button size="lg" variant="fossday">
