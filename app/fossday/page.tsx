@@ -7,6 +7,7 @@ import RegistrationPage from "@/components/Fossday/RegistrationPage";
 import SpeakerPage from "@/components/Fossday/SpeakerPage";
 import TimelinePage from "@/components/Fossday/TimelinePage";
 import VolunteerPage from "@/components/Fossday/VolunteerPage";
+import RSVP from "@/components/Fossday/RSVP";
 import React from "react";
 
 export default function FossDay() {
@@ -14,7 +15,8 @@ export default function FossDay() {
 		<div className="h-auto bg-[#4fadf5] overflow-x-hidden">
 			<GameoverPage />
 			<HomePage />
-			<SpeakerPage />
+			{/* <SpeakerPage /> */}
+			<RSVP/>
 			<Gap />
 			<AboutPage />
 			<Gap />
