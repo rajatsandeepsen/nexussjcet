@@ -19,15 +19,15 @@ export default function HomePage() {
 				<Text variant="fossday" coloring={"fossday-yellow"} size={"p"}>
 					November 9th, 2024 <br /> 9:00 AM - 4:30 PM
 				</Text>
-				<Link href="/fossday/register" className="z-50">
+				<Link href="/fossday/feedback" className="z-50">
 					<Button size="lg" variant="fossday">
-						<span className="text-xl">Register Now</span>
+						<span className="text-xl">Feedback</span>
 						<ChevronRight />
 					</Button>
 				</Link>
-				<Text coloring={"white"} size={"p"}>
+				{/* <Text coloring={"white"} size={"p"}>
 					Registration closes on November 5th Tuesday, 2024
-				</Text>
+				</Text> */}
 			</div>
 		</div>
 	);
