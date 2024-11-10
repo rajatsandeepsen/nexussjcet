@@ -3,11 +3,11 @@ import CommunityPage from "@/components/Fossday/CommunityPage";
 import FooterPage from "@/components/Fossday/FooterPage";
 import GameoverPage from "@/components/Fossday/GameoverPage";
 import HomePage from "@/components/Fossday/HomePage";
+import RSVP from "@/components/Fossday/RSVP";
 import RegistrationPage from "@/components/Fossday/RegistrationPage";
 import SpeakerPage from "@/components/Fossday/SpeakerPage";
 import TimelinePage from "@/components/Fossday/TimelinePage";
 import VolunteerPage from "@/components/Fossday/VolunteerPage";
-import RSVP from "@/components/Fossday/RSVP";
 import React from "react";
 
 export default function FossDay() {
@@ -16,7 +16,7 @@ export default function FossDay() {
 			<GameoverPage />
 			<HomePage />
 			{/* <SpeakerPage /> */}
-			<RSVP/>
+			{/* <RSVP/> */}
 			<Gap />
 			<AboutPage />
 			<Gap />
@@ -24,7 +24,7 @@ export default function FossDay() {
 			<Gap />
 			<CommunityPage />
 			<Gap />
-			<RegistrationPage />
+			{/* <RegistrationPage /> */}
 			<Gap />
 			<VolunteerPage/>
 			<Gap />
