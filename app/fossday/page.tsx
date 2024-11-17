@@ -26,8 +26,6 @@ export default function FossDay() {
 			<Gap />
 			{/* <RegistrationPage /> */}
 			<Gap />
-			<VolunteerPage/>
-			<Gap />
 			<Gap />
 			<FooterPage />
 		</div>
