@@ -12,7 +12,7 @@ type CardImage = {
     hover: string;
 };
 
-const AnimatedCardGrid: React.FC = () => {
+const AnimatedCardGrid: React.FC<{cardImages:CardImage[]}> = ({cardImages}) => {
     const gridRef = useRef<HTMLDivElement>(null);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [isMobile, setIsMobile] = useState(false);
@@ -21,12 +21,6 @@ const AnimatedCardGrid: React.FC = () => {
         { right: "right-[474px]", bottom: "bottom-[326px]" },
         { right: "right-[237px]", bottom: "bottom-[326px]" },
         { right: "right-0", bottom: "bottom-[326px]" },
-    ];
-
-    const cardImages: CardImage[] = [
-        { normal: "./fossday/aibel.png", hover: "./fossday/aibelhover.png" },
-        { normal: "./fossday/rajat.png", hover: "./fossday/rajathover.png" },
-        { normal: "./fossday/milan.png", hover: "./fossday/milanhover.png" },
     ];
 
     useEffect(() => {
