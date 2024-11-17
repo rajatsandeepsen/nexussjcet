@@ -6,7 +6,7 @@ import WavyText from "./WavyText";
 
 export default function SpeakerPage() {
 	return (
-		<div className="relative flex h-screen container flex-col items-center justify-around">
+		<div className="relative flex h-screen container flex-col items-center justify-around z-40">
 			<div className="text-center flex flex-col items-center justify-center">
 				<div className="relative mb-9 flex flex-col items-center justify-center md:mb-0 md:flex-row -mt-[10rem]">
 					<img
