@@ -28,6 +28,7 @@ import Link from "next/link";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
 	return {
+		wrapper: ({ children }) => (<section className="container my-20">{children}</section>),
 		h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
 			<h1
 				className={cn(
