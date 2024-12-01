@@ -21,6 +21,8 @@ import { CopyIcon } from "lucide-react";
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
 
+import "@/styles/github.css";
+
 // This file allows you to provide custom React components
 // to be used in MDX files. You can import and use any
 // React component you want, including inline styles,
@@ -140,7 +142,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 			...props
 		}: React.HTMLAttributes<HTMLElement>) => (
 			<blockquote
-				className={cn("mt-6 border-l-2 pl-6 italic", className)}
+				className={cn("hljs mt-6 border-l-2 bg-opacity-5 pl-6 italic", className)}
 				{...props}
 			/>
 		),
@@ -176,7 +178,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 		),
 		pre: ({ className, ...props }: React.HTMLAttributes<HTMLPreElement>) => {
 			return (
-				<Card className="relative my-4 hljs border-0">
+				<Card className="hljs relative my-4 border-0">
 					<pre
 						className={cn(
 							"max-h-[650px] overflow-x-auto p-4",
@@ -184,7 +186,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 						)}
 						{...props}
 					/>
-					<Button size={"icon"} variant={"default"} className={"absolute top-2 right-2"}>
+					<Button size={"icon"} className={"absolute top-2 right-2"}>
 						<CopyIcon />
 					</Button>
 				</Card>

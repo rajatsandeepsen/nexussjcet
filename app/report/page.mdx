@@ -1,5 +1,10 @@
 import { Button } from '@/components/ui/button'
- 
+
+export const metadata = {
+	title: "Page title",
+	description: "Page Description",
+};
+
 # Welcome to my MDX page!
  
 This is some **bold** and _italics_ text.
@@ -58,7 +63,7 @@ console.log('Hi pluto!')
 ```
 </details>
 
-```typescript
+```typescript highlight={1} filename="app/page.tsx" switcher
 import rehypeFormat from 'rehype-format'
 import rehypeHighlight from 'rehype-highlight'
 import rehypePrettyCode from "rehype-pretty-code";
