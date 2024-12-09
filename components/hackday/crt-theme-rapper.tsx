@@ -11,7 +11,7 @@ const CRTThemeWrapper = ({ children }: { children: ReactNode }) => {
 			<div className="emblem">
 				<span className="icon-information"></span>
 			</div>
-			<div className="frame overflow-x-scroll min-h-screen relative">
+			<div className="frame overflow-x-scroll h-screen relative">
 				<div className="absolute  top-0 h-[5rem] w-full z-10">
 					<RetroNavbar />
 				</div>

@@ -77,7 +77,7 @@ const CountdownTimer: React.FC = () => {
 // Main HomePage Component
 const HomePage: React.FC = () => {
   return (
-    <div className="noisy bg-black min-h-screen text-[#00FF00] font-mono leading-snug overflow-x-scroll">
+    <div className="noisy bg-black h-screen text-[#00FF00] font-mono leading-snug overflow-x-scroll">
     
 
       {/* Logo and Hero Section */}

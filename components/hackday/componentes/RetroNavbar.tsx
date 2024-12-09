@@ -5,7 +5,7 @@ import React from 'react';
 export default function RetroNavbar() {
   return (
     <div className="w-3/4 mx-auto h-[3rem] bg-[#02a933] flex items-center justify-around text-white pointer-events-auto px-2 py-1">
-       <Link href="/hackday/home">
+       <Link href="/hackday">
         <button className="transition duration-200 ease-in-out hover:bg-black hover:text-white text-xl font-bold  uppercase">
           <Image src={"/favicon.svg"} width={30} height={30} alt="logo" />
         </button>
