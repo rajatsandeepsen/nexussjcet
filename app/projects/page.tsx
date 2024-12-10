@@ -332,7 +332,7 @@ export default function Page() {
       </div>
 
       {/* Main Content */}
-      <div className="relative h-auto overflow-hidden bg-[#eaeaec]">
+      <div className="relative h-auto overflow-hidden bg-[#eaeaec] z-0">
         <div
           className="relative flex h-screen w-full items-center justify-center z-10"
           ref={projectMatRef}
@@ -341,6 +341,9 @@ export default function Page() {
         </div>
 
         <div ref={heroRef} className="relative h-screen w-full bg-[#eaeaec]">
+        <div className="absolute bg-blend-multiply z-0">
+        <Image src={"/projects/shadow.webp"} width={1920} height={1080} alt="logo" />
+      </div>
           <h1 className="absolute top-[42%] md:top-1/2   md:mt-9 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center flex items-start flex-col justify-start">
             <span className="inline-block align-middle mr-2">
               <Image 

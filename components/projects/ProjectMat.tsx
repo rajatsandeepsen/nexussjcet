@@ -9,7 +9,7 @@ export default function ProjectMat() {
 				width={1280}
 				height={720}
 				alt="logo"
-				className="absolute left-0 z-20  object-cover rounded-lg"
+				className="absolute left-0 z-10  object-cover rounded-lg"
 			/>
 			
 		</div>

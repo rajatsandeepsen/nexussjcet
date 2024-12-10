@@ -25,14 +25,14 @@ export default function RegisterPage() {
 	return (
 		<div className="relative z-50 flex min-h-screen w-full flex-col items-center justify-between py-4 px-4 sm:px-6">
 			<Image
-				src="/projects/collegelogo.png"
+				src="/projects/collegelogo.webp"
 				width={200}
 				height={200}
 				alt="College Logo"
 				className="mx-auto top-0  w-32 h-32 sm:w-48 sm:h-48 object-contain"
 			/>
 			<Image
-				src="/projects/nexussticky.png"
+				src="/projects/nexussticky.webp"
 				width={400}
 				height={400}
 				alt="Nexus Sticky"
