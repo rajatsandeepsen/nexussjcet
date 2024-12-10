@@ -1,17 +1,15 @@
+import Image from "next/image";
 import ProjectMat from "./ProjectMat";
 
-
-export const ProjectHome = () => {
+export const ProjectHome = ({ projectMatRef }: { projectMatRef: React.RefObject<HTMLDivElement> }) => {
   return (
-    <div className="relative h-full flex items-center justify-center text-black flex-col bg-[#eff2f5]">
-      {/* <h1 className="text-black text-4xl font-bold ">Projects</h1>
-      <p className="w-3/4 text-xl ">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus
-        id perspiciatis reiciendis, eaque consectetur neque illo exercitationem
-        illum consequatur eveniet ratione suscipit excepturi sint voluptatibus
-        distinctio, et, recusandae eius fugit.
-      </p> */}
-      <ProjectMat/>
+    <div className="relative flex h-full w-full flex-col items-center justify-center text-black">
+      <div className="absolute bg-blend-multiply z-30">
+        <Image src={"/projects/shadow.webp"} width={1920} height={1080} alt="logo" />
+      </div>
+      <div ref={projectMatRef} className="relative z-50">
+        <ProjectMat />
+      </div>
     </div>
   );
 };

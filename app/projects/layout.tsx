@@ -2,8 +2,8 @@ import { FloatingNav } from "@/components/projects/floating-navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "FOSSDAY 2024",
-	description: "Calling all FOSS Enthusiasts on 9th November 2024",
+	title: "Projects - St. Joseph's College of Engineering and Technology, Palai",
+	description: "Explore the innovative projects developed by students of our college.",
 	icons: [{ rel: "icon", url: "/fossday/fd.svg" }],
 	publisher: "St. Joseph's College of Engineering and Technology, Palai",
 };
@@ -36,7 +36,7 @@ export default function RootLayout({
       ];
 
 	return (<>
-        <FloatingNav navItems={navItems} />
+        {/* <FloatingNav navItems={navItems} /> */}
 
     { children }
     </>);
