@@ -45,7 +45,7 @@ export default function Page() {
 		},
 		{
 			id: "fourthSection",
-			position: { x: 0.5, y: 0.4 },
+			position: { x: 0.5, y: 0.5 },
 			rotation: 0,
 			scale: 1.0,
 		},
