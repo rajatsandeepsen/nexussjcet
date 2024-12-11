@@ -33,14 +33,6 @@ const Footer: React.FC = () => {
 									Become a Speaker
 								</Link>
 							</li>
-							<li>
-								<Link
-									href="/fossday/speaker"
-									className="hover:text-fossday-yellow"
-								>
-									Join us as Partner
-								</Link>
-							</li>
 						</ul>
 					</div>
 					<div className="text-center">

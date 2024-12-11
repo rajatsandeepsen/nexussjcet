@@ -81,13 +81,17 @@ export const PrevProjectOfTheWeek = React.forwardRef<HTMLDivElement>(
 				ref={ref}
 				className="relative flex min-h-screen w-full items-center justify-center overflow-hidden font-semibold text-gray-700 text-lg"
 			>
-
-                <div className="z-10 flex w-full flex-wrap items-center justify-center gap-6">
-
-				{projects.map((project, index) => (
-					<ProjectCard key={project.title} {...project} cardSize="regular" />
-				))}
-                </div>
+				<div className="z-10 flex w-full flex-wrap items-center justify-center gap-6">
+					{projects.map((project, index) => (
+						<ProjectCard key={project.title} {...project} cardSize="regular" />
+					))}
+					{projects.map((project, index) => (
+						<ProjectCard key={project.title} {...project} cardSize="regular" />
+					))}
+					{projects.map((project, index) => (
+						<ProjectCard key={project.title} {...project} cardSize="regular" />
+					))}
+				</div>
 			</div>
 		);
 	},

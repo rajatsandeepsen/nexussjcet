@@ -27,15 +27,21 @@ export default function Page() {
 		},
 		{
 			id: "secondSection",
-			position: { x: 0.2, y: 0.8 },
-			rotation: 45,
-			scale: 1,
+			position: { x: 0.5, y: 0.5 },
+			rotation: 0,
+			scale: 1.2,
 		},
 		{
 			id: "thirdSection",
-			position: { x: 0.2, y: 0.8 },
-			rotation: 45,
-			scale: 1.5,
+			position: { x: 0.5, y: 0.5 },
+			rotation: 0,
+			scale: 2.3,
+		},
+		{
+			id: "thirdSection2",
+			position: { x: 0.5, y: 0.5 },
+			rotation: 0,
+			scale: 2.3,
 		},
 		{
 			id: "fourthSection",
@@ -343,24 +349,30 @@ export default function Page() {
 				<div ref={heroRef} className="relative h-screen w-full bg-[#eaeaec]">
 					<div className="absolute bg-blend-multiply z-0">
 						<Image
-							src={"/projects/shadow.webp"}
+							src={"/projects/shadow.png"}
+							className="opacity-20"
 							width={1920}
 							height={1080}
 							alt="logo"
 							priority
 						/>
-						
 					</div>
-          <div className="absolute top-1/2 md:top-1/2   md:mt-9 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-6xl lg:text-7xl font-bold text-white text-center flex items-start flex-col justify-start">
-							<Image
-								src={"/favicon.svg"}
-								width={60}
-								height={60}
-								alt="logo"
-								className="w-6 h-6 sm:w-5 sm:h-5 md:w-12 md:h-12 lg:w-14 lg:h-14"
-							/>
-							<h1 className="">Project Of The Week</h1>
-						</div>
+					<div className="absolute top-1/2 md:top-1/2   md:mt-9 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-6xl lg:text-7xl font-bold text-white text-center flex items-start flex-col justify-start">
+						<Image
+							src="/projects/nexus-tag.webp"
+							width={400}
+							height={400}
+							alt="Nexus Sticky"
+							className="-mt-12 sm:-mt-48 mx-auto w-32 h-32 sm:w-96 sm:h-96 scale-50 -right-56 -bottom-56  object-contain absolute"
+						/>
+						<Image
+							src={"/projects/logo.svg"}
+							width={350}
+							height={350}
+							alt="logo"
+							// className="w-6 h-6 sm:w-5 sm:h-5 md:w-12 md:h-12 lg:w-14 lg:h-14"
+						/>
+					</div>
 				</div>
 
 				<div

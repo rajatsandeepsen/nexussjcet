@@ -19,15 +19,15 @@ export default function HomePage() {
 				<Text variant="fossday" coloring={"fossday-yellow"} size={"p"}>
 					November 9th, 2024 <br /> 9:00 AM - 4:30 PM
 				</Text>
-				<Link href="/fossday/feedback" className="z-50">
+				<Link href="https://drive.google.com/drive/folders/1HTa1R3Q7GTxnM7VNEQH7vNJuYMD6Naa3?usp=drive_link" className="z-50">
 					<Button size="lg" variant="fossday">
-						<span className="text-xl">Feedback</span>
+						<span className="text-xl">View Pictures</span>
 						<ChevronRight />
 					</Button>
 				</Link>
-				{/* <Text coloring={"white"} size={"p"}>
-					Registration closes on November 5th Tuesday, 2024
-				</Text> */}
+				<Text coloring={"white"} size={"span"} className="opacity-50">
+					See you next year! Bye!
+				</Text>
 			</div>
 		</div>
 	);
