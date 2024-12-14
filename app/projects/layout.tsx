@@ -1,5 +1,10 @@
 import { FloatingNav } from "@/components/projects/floating-navbar";
 import type { Metadata } from "next";
+import localFont from "next/font/local";
+
+const font = localFont({
+  src: "../../public/projects/fonts/webfonts/CalSans-SemiBold.ttf"
+})
 
 export const metadata: Metadata = {
 	title: "Project of the Week",
@@ -40,9 +45,9 @@ export default function RootLayout({
         },
       ];
 
-	return (<>
+	return (<div className={font.className}>
         {/* <FloatingNav navItems={navItems} /> */}
 
     { children }
-    </>);
+    </div>);
 }
