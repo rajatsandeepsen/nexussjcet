@@ -1,395 +1,120 @@
 "use client";
-import ProjectMat from "@/components/projects/ProjectMat";
-import { PrevProjectOfTheWeek } from "@/components/projects/pages/PrevProjectOfTheWeek";
-import { ProjectOfTheWeek } from "@/components/projects/pages/ProjectOfTheWeek";
-import RegisterPage from "@/components/projects/pages/RegisterPage";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function Page() {
-	const heroRef = useRef<HTMLDivElement>(null);
-	const nextSectionRef = useRef<HTMLDivElement>(null);
-	const containerRef = useRef<HTMLDivElement>(null);
-	const thirdSectionRef = useRef<HTMLDivElement>(null);
-	const fourthSectionRef = useRef<HTMLDivElement>(null);
-	const projectMatRef = useRef<HTMLDivElement>(null);
-
-	const projectMatPositions = [
-		{
-			id: "hero",
-			position: { x: 0.5, y: 0.5 },
-			rotation: 0,
-			scale: 0.9,
-		},
-		{
-			id: "secondSection",
-			position: { x: 0.5, y: 0.5 },
-			rotation: 0,
-			scale: 1.2,
-		},
-		{
-			id: "thirdSection",
-			position: { x: 0.5, y: 0.5 },
-			rotation: 0,
-			scale: 2.3,
-		},
-		{
-			id: "thirdSection2",
-			position: { x: 0.5, y: 0.5 },
-			rotation: 0,
-			scale: 2.3,
-		},
-		{
-			id: "fourthSection",
-			position: { x: 0.5, y: 0.5 },
-			rotation: 0,
-			scale: 1.0,
-		},
-	];
-
-	useEffect(() => {
-		if (projectMatRef.current) {
-			const projectMatTimeline = gsap.timeline({
-				scrollTrigger: {
-					trigger: "body",
-					start: "top top",
-					end: "bottom bottom",
-					scrub: true,
-				},
-			});
-
-			gsap.set(projectMatRef.current, {
-				position: "fixed",
-				top: "50%",
-				left: "50%",
-				transform: "translate(-50%, -50%)",
-			});
-
-			projectMatPositions.forEach((pos, index) => {
-				if (index > 0) {
-					projectMatTimeline.to(projectMatRef.current, {
-						top: `${pos.position.y * 100}%`,
-						left: `${pos.position.x * 100}%`,
-						rotation: pos.rotation,
-						scale: pos.scale,
-						duration: 1,
-					});
-				}
-			});
-		}
-
-		const stopMotionEffect = () => ({
-			duration: 2,
-			ease: "steps(8)",
-			x: `+=${Math.random() * 200 - 100}`,
-			y: `+=${Math.random() * 200 - 100}`,
-			rotation: `+=${Math.random() * 60 - 30}`,
-		});
-
-		const smoothScrollTrigger = ScrollTrigger.create({
-			trigger: heroRef.current,
-			start: "bottom top",
-			end: "bottom bottom",
-			onLeave: () => {
-				nextSectionRef.current?.scrollIntoView({
-					behavior: "smooth",
-					block: "start",
-				});
-			},
-			onEnterBack: () => {
-				heroRef.current?.scrollIntoView({
-					behavior: "smooth",
-					block: "start",
-				});
-			},
-		});
-
-		const images = gsap.utils.toArray(
-			".box-left, .box-right, .box-top, .box-bottom",
-		);
-
-		const animations = gsap.timeline({
-			scrollTrigger: {
-				trigger: heroRef.current,
-				start: "top top",
-				end: "bottom top",
-				scrub: true,
-			},
-		});
-
-		animations
-			.to(
-				".box-left",
-				{
-					...stopMotionEffect(),
-					x: -1500,
-					stagger: 0.1,
-				},
-				0,
-			)
-			.to(
-				".box-right",
-				{
-					...stopMotionEffect(),
-					x: 1500,
-					stagger: 0.1,
-				},
-				0,
-			)
-			.to(
-				".box-top",
-				{
-					...stopMotionEffect(),
-					y: -1500,
-					stagger: 0.1,
-				},
-				0,
-			)
-			.to(
-				".box-bottom",
-				{
-					...stopMotionEffect(),
-					y: 1500,
-					stagger: 0.1,
-				},
-				0,
-			);
-
-		const handleResize = () => {
-			ScrollTrigger.refresh();
-		};
-
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-			window.removeEventListener("resize", handleResize);
-		};
-	}, []);
-
+export default function Page(){
 	return (
-		<div className="relative min-h-screen w-full bg-[#eaeaec]">
-			{/* Animated Edge-Aligned Boxes */}
-			<div className="pointer-events-none fixed inset-0 z-50">
-				{/* Left Edge Boxes */}
-				<div className="box-left absolute top-0 left-0 w-1/4 drop-shadow-xl transition-transform md:w-auto sm:w-1/3">
-					<Image
-						src="/projects/board4.webp"
-						width={300}
-						height={300}
-						alt="Board 4"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-left absolute bottom-0 left-0 w-1/5 drop-shadow-xl transition-transform md:w-auto sm:w-1/4">
-					<Image
-						src="/projects/speaker.webp"
-						width={200}
-						height={200}
-						alt="Speaker"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-left absolute top-0 left-[20%] w-1/5 drop-shadow-xl transition-transform md:w-auto sm:w-1/4">
-					<Image
-						src="/projects/speaker.webp"
-						width={200}
-						height={200}
-						alt="Speaker"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-left absolute top-[10%] left-0 w-1/3 drop-shadow-xl transition-transform md:w-auto sm:w-2/5">
-					<Image
-						src="/projects/notepad2.webp"
-						width={400}
-						height={400}
-						alt="Notepad 2"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-left absolute top-[70%] left-[30%] w-1/5 drop-shadow-xl transition-transform md:w-auto sm:w-1/4">
-					<Image
-						src="/projects/board3.webp"
-						width={200}
-						height={200}
-						alt="Board 3"
-						className="h-auto w-full"
-					/>
-				</div>
-
-				{/* Top Edge Boxes */}
-				<div className="box-top absolute top-0 left-[50%] z-10 w-1/3 drop-shadow-xl transition-transform md:w-auto sm:w-2/5">
-					<Image
-						src="/projects/env.webp"
-						width={400}
-						height={400}
-						alt="Envelope"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-top absolute top-[-20%] left-[50%] w-1/3 drop-shadow-xl transition-transform md:w-auto sm:w-2/5">
-					<Image
-						src="/projects/sketches.webp"
-						width={400}
-						height={400}
-						alt="Sketches"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-top absolute top-0 left-[70%] w-1/4 drop-shadow-xl transition-transform md:w-auto sm:w-1/3">
-					<Image
-						src="/projects/cable.webp"
-						width={300}
-						height={300}
-						alt="Cable"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-top absolute top-[5%] right-0 w-1/4 drop-shadow-xl transition-transform md:w-auto sm:w-1/3">
-					<Image
-						src="/projects/notepad1.webp"
-						width={300}
-						height={300}
-						alt="Notepad 1"
-						className="h-auto w-full"
-					/>
-				</div>
-				<div className="box-top absolute top-0 right-0 z-10 w-1/4 drop-shadow-xl transition-transform md:w-auto sm:w-1/3">
-					<Image
-						src="/projects/lamp.webp"
-						width={300}
-						height={300}
-						alt="Lamp"
-						className="w-full h-auto"
-					/>
-				</div>
-				<div className="absolute top-0 right-0 z-0 transition-transform drop-shadow-xl box-top w-1/4 sm:w-1/3 md:w-auto">
-					<Image
-						src="/projects/rectangle 40319.webp"
-						width={300}
-						height={300}
-						alt="Rectangle"
-						className="w-full h-auto"
-					/>
-				</div>
-
-				{/* Right Edge Boxes */}
-				<div className="absolute top-[40%] right-0 transition-transform drop-shadow-xl box-right w-1/5 sm:w-1/4 md:w-auto">
-					<Image
-						src="/projects/volt.webp"
-						width={250}
-						height={250}
-						alt="Volt"
-						className="w-full h-auto"
-					/>
-				</div>
-				<div className="absolute bottom-[10%] left-[90%] transition-transform drop-shadow-xl box-top w-1/12 sm:w-1/10 md:w-auto">
-					<Image
-						src="/projects/board1.webp"
-						width={100}
-						height={100}
-						alt="Board 1"
-						className="w-full h-auto"
-					/>
-				</div>
-				<div className="absolute bottom-[14%] left-[90%] transition-transform drop-shadow-xl rotate-45 box-top w-1/12 sm:w-1/10 md:w-auto">
-					<Image
-						src="/projects/board1.webp"
-						width={100}
-						height={100}
-						alt="Board 1"
-						className="w-full h-auto"
-					/>
-				</div>
-
-				{/* Bottom Edge Boxes */}
-				<div className="absolute bottom-0 right-[10%] transition-transform drop-shadow-xl box-bottom w-1/3 sm:w-2/5 md:w-auto">
-					<Image
-						src="/projects/gears.webp"
-						width={400}
-						height={400}
-						alt="Gears"
-						className="w-full h-auto"
-					/>
-				</div>
-				<div className="absolute bottom-0 left-[40%] transition-transform drop-shadow-xl box-bottom w-2/5 sm:w-1/2 md:w-auto">
-					<Image
-						src="/projects/notepad4.webp"
-						width={500}
-						height={500}
-						alt="Notepad 4"
-						className="w-full h-auto"
-					/>
-				</div>
-				<div className="absolute bottom-0 left-[35%] transition-transform drop-shadow-xl box-bottom w-1/5 sm:w-1/4 md:w-auto">
-					<Image
-						src="/projects/solderingiron.webp"
-						width={200}
-						height={200}
-						alt="Soldering Iron"
-						className="w-full h-auto"
-					/>
-				</div>
+		<div className="relative flex flex-col min-h-screen w-full overflow-x-hidden bg-white">
+			<div className="absolute h-screen w-full overflow-hidden z-50 mix-blend-multiply">
+				<Image
+					src="/projects/shadow.webp"
+					width={1000}
+					height={1000}
+					alt="smooth shadow" className="min-w-[1500px] md:min-w-screen"/>
+			</div>
+			{/* TOP PORTION */}
+			<div className="absolute w-56 -left-16 -top-12 md:w-80">
+				<Image
+					src="/projects/circuitboard.webp"
+					width={1000}
+					height={1000}
+					alt="circuit board"/>
+			</div>
+			<div className="absolute w-64 top-24 z-10 md:left-96 md:top-5">
+				<Image
+					src="/projects/cable.webp"
+					width={1000}
+					height={1000}
+					alt="cable"/>
+			</div>
+			<div className="absolute w-[500px] -right-64 -top-56 z-10 md:w-[600px] md:-right-44 md:z-20">
+				<Image
+					src="/projects/magazinefolder.webp"
+					width={1000}
+					height={1000}
+					alt="folder"/>
+			</div>
+			<div className="absolute w-[350px] -right-24 -top-12 md:w-[400px] md:z-10">
+				<Image
+					src="/projects/blackprint.webp"
+					width={1000}
+					height={1000}
+					alt="black prints"/>
+			</div>
+			<div className="absolute w-44 top-72 left-24 z-10 md:w-64">
+				<Image
+					src="/projects/gears.webp"
+					width={1000}
+					height={1000}
+					alt="gears"/>
+			</div>
+			<div className="absolute w-32 top-[450px] left-[60px] z-20 md:w-52 md:left-[200px]">
+				<Image
+					src="/projects/arduino.webp"
+					width={1000}
+					height={1000}
+					alt="arduino"/>
+			</div>
+			<div className="absolute w-16 top-[450px] left-[220px] z-20 md:w-28 md:left-[1000px]">
+				<Image
+					src="/projects/lilchip.webp"
+					width={1000}
+					height={1000}
+					alt="lil chip"/>
+			</div>
+			<div className="absolute w-64 top-[250px] -right-32 z-20 md:w-80 md:top-[300px]">
+				<Image
+					src="/projects/multimeter.webp"
+					width={1000}
+					height={1000}
+					alt="multimeter"/>
 			</div>
 
-			{/* Main Content */}
-			<div className="relative h-auto overflow-hidden bg-[#eaeaec] z-0">
-				<div
-					className="relative flex h-screen w-full items-center justify-center z-10"
-					ref={projectMatRef}
-				>
-					<ProjectMat />
-				</div>
+			<div className="absolute w-[800px] -left-[200px] top-40 md:left-[200px] md:w-[1000px] md:top-0">
+				<Image
+					src="/projects/blueprint.webp"
+					width={1000}
+					height={1000}
+					alt="blueprint"/>
+			</div>
 
-				<div ref={heroRef} className="relative h-screen w-full bg-[#eaeaec]">
-					<div className="absolute bg-blend-multiply z-0">
-						<Image
-							src={"/projects/shadow.png"}
-							className="opacity-20"
-							width={1920}
-							height={1080}
-							alt="logo"
-							priority
-						/>
-					</div>
-					<div className="absolute top-1/2 md:top-1/2   md:mt-9 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 text-2xl md:text-6xl lg:text-7xl font-bold text-white text-center flex items-start flex-col justify-start">
-						<Image
-							src="/projects/nexus-tag.webp"
-							width={400}
-							height={400}
-							alt="Nexus Sticky"
-							className="-mt-12 sm:-mt-48 mx-auto w-32 h-32 sm:w-96 sm:h-96 scale-50 -right-56 -bottom-56  object-contain absolute"
-						/>
-						<Image
-							src={"/projects/logo.svg"}
-							width={350}
-							height={350}
-							alt="logo"
-							// className="w-6 h-6 sm:w-5 sm:h-5 md:w-12 md:h-12 lg:w-14 lg:h-14"
-						/>
-					</div>
-				</div>
+			{/* BOTTOM PORTION */}
+			<div className="absolute w-[300px] -left-[160px] top-[450px] md:w-[400px] md:top-[300px]">
+				<Image
+					src="/projects/notebook.webp"
+					width={1000}
+					height={1000}
+					alt="botebook"/>
+			</div>
+			<div className="absolute w-[400px] left-20 top-[700px] md:top-[500px] md:w-[600px] md:left-[800px]">
+				<Image
+					src="/projects/notepads.webp"
+					width={1000}
+					height={1000}
+					alt="botebook"/>
+			</div>
+			<div className="absolute w-[200px] top-[750px] md:top-[600px] md:left-14">
+				<Image
+					src="/projects/soldering.webp"
+					width={1000}
+					height={1000}
+					alt="botebook"/>
+			</div>
+			<div className="absolute w-[100px] top-[700px] right-12 md:right-[900px] md:top-[600px]">
+				<Image
+					src="/projects/stickynote.webp"
+					width={1000}
+					height={1000}
+					alt="botebook"/>
+			</div>
 
-				<div
-					ref={nextSectionRef}
-					className="flex min-h-screen w-full items-center justify-center bg-[#eaeaec]"
-				>
-					<ProjectOfTheWeek />
-				</div>
-
-				<div className="w-full min-h-screen">
-					<PrevProjectOfTheWeek />
-				</div>
-
-				<div className="w-full min-h-screen">
-					<RegisterPage />
+			{/* REAL CONTENT BEGINS HERE */}
+			<div className="h-screen flex flex-col justify-center items-center z-10">
+				<div className="flex flex-col pt-20 md:pt-0">
+					<Image src="/projects/nexus.webp" width={100} height={100} alt="nexus" className="w-14"/>
+					<h1 className="text-[40px] font-bold text-white opacity-80 md:text-6xl">project of the week</h1>
 				</div>
 			</div>
+			<div className="h-screen z-20 bg-white"></div>
 		</div>
-	);
+	)
 }
