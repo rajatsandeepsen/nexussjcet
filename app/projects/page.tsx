@@ -1,5 +1,7 @@
 "use client";
 import Image from "next/image";
+import { ProjectOfTheWeek } from "@/components/projects/pages/ProjectOfTheWeek";
+import { PrevProjectOfTheWeek } from "@/components/projects/pages/PrevProjectOfTheWeek";
 
 export default function Page(){
 	return (
@@ -114,6 +116,12 @@ export default function Page(){
 					<h1 className="text-[40px] font-bold text-white opacity-80 md:text-6xl">project of the week</h1>
 				</div>
 				<a href="/projects/submit" className="relative bg-gradient-to-b from-neutral-700 to-black text-white px-4 p-2 rounded-full z-50">showcase your project!</a>
+			</div>
+			<div className="py-6 z-50 bg-neutral-100">
+				<ProjectOfTheWeek/>
+			</div>
+			<div className="py-6 z-50 bg-neutral-100">
+				<PrevProjectOfTheWeek/>
 			</div>
 		</div>
 	)
