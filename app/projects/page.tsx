@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Page(){
 	return (
 		<div className="relative flex flex-col min-h-screen w-full overflow-x-hidden bg-white">
-			<div className="absolute h-screen w-full overflow-hidden z-50 mix-blend-multiply">
+			<div className="absolute h-screen w-full overflow-hidden z-30 mix-blend-multiply">
 				<Image
 					src="/projects/shadow.webp"
 					width={1000}
@@ -108,13 +108,13 @@ export default function Page(){
 			</div>
 
 			{/* REAL CONTENT BEGINS HERE */}
-			<div className="h-screen flex flex-col justify-center items-center z-10">
+			<div className="relative h-screen flex flex-col justify-center items-center">
 				<div className="flex flex-col pt-20 md:pt-0">
 					<Image src="/projects/nexus.webp" width={100} height={100} alt="nexus" className="w-14"/>
 					<h1 className="text-[40px] font-bold text-white opacity-80 md:text-6xl">project of the week</h1>
 				</div>
+				<a href="/projects/submit" className="relative bg-gradient-to-b from-neutral-700 to-black text-white px-4 p-2 rounded-full z-50">showcase your project!</a>
 			</div>
-			<div className="h-screen z-20 bg-white"></div>
 		</div>
 	)
 }
