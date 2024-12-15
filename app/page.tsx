@@ -47,13 +47,11 @@ export default function Home() {
   if (loading) {
     return (
       <main className="relative flex min-h-screen flex-col items-center justify-center">
-        <div className="w-96">
           {/* biome-ignore lint/a11y/useAltText: <explanation> */}
           <img
             src="./logo.svg"
             className="repeat-infinite animate-pulse transition-all ease-out"
           />
-        </div>
       </main>
     );
   }

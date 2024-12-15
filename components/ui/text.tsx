@@ -8,6 +8,7 @@ const typoVariants = cva("", {
 		variant: {
 			default: "scroll-m-20 font-extrabold tracking-tight",
 			fossday: "font-pixelify capitalize",
+			projects: "cal-sans",
 		},
 		size: {
 			h1: "font-extrabold text-7xl md:text-9xl",
@@ -23,6 +24,7 @@ const typoVariants = cva("", {
 				"text-white [text-shadow:4px_4px_hsl(var(--fossday-border))]",
 			"fossday-white1":
 				"text-white [text-shadow:1px_1px_hsl(var(--fossday-border))]",
+			"projects-white": "bg-gradient-to-tl from-gray-300 via-gray-200 to-white bg-clip-text text-transparent"
 		},
 	},
 	defaultVariants: {

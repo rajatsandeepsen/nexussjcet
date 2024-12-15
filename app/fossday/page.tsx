@@ -3,6 +3,7 @@ import CommunityPage from "@/components/Fossday/CommunityPage";
 import FooterPage from "@/components/Fossday/FooterPage";
 import GameoverPage from "@/components/Fossday/GameoverPage";
 import HomePage from "@/components/Fossday/HomePage";
+import RSVP from "@/components/Fossday/RSVP";
 import RegistrationPage from "@/components/Fossday/RegistrationPage";
 import SpeakerPage from "@/components/Fossday/SpeakerPage";
 import TimelinePage from "@/components/Fossday/TimelinePage";
@@ -14,7 +15,8 @@ export default function FossDay() {
 		<div className="h-auto bg-[#4fadf5] overflow-x-hidden">
 			<GameoverPage />
 			<HomePage />
-			<SpeakerPage />
+			{/* <SpeakerPage /> */}
+			{/* <RSVP/> */}
 			<Gap />
 			<AboutPage />
 			<Gap />
@@ -22,9 +24,7 @@ export default function FossDay() {
 			<Gap />
 			<CommunityPage />
 			<Gap />
-			<RegistrationPage />
-			<Gap />
-			<VolunteerPage/>
+			{/* <RegistrationPage /> */}
 			<Gap />
 			<Gap />
 			<FooterPage />
