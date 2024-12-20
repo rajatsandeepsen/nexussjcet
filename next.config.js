@@ -7,8 +7,8 @@
 import { withMDX } from "./lib/mdx.js";
 
 /** @type {import("next").NextConfig} */
-const config = {
+const config = withMDX({
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-};
+});
 
-export default withMDX(config)
+export default config
